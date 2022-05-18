@@ -1,14 +1,22 @@
-import React, { useEffect } from "react";
-import { hot } from "react-hot-loader/root";
-import "foundation-sites";
-import $ from "jquery";
+import React, { useEffect } from "react"
+import { hot } from "react-hot-loader/root"
+import "foundation-sites"
+import $ from "jquery"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import AirlinesIndex from "./AirlinesIndex"
 
-const App = (props) => {
+const App = () => {
   useEffect(() => {
-    $(document).foundation();
-  }, []);
+    $(document).foundation()
+  }, [])
 
-  return <h1>Hello from the frontend!</h1>;
-};
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/airlines" component={AirlinesIndex} />
+      </Switch>
+    </BrowserRouter>
+  )
+}
 
-export default hot(App);
+export default hot(App)
