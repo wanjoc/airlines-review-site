@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -42,13 +41,10 @@ public class Airline {
   private String headquarters;
 
   @NotBlank
-//  @Size(min=10, max=10)
   @Column(name="contact_number", nullable = false)
   private String contactNumber;
 
   @NotBlank
   @Column(name="homepage_url", nullable = false)
   private String homepageUrl;
-
-
 }

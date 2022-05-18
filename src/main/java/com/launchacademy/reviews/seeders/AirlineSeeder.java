@@ -43,7 +43,6 @@ public class AirlineSeeder {
       airlineThree.setHomepageUrl("https://www.delta.com/");
       airlineThree.setLogoUrl("https://mma.prnewswire.com/media/588812/DELTA_AIR_LINES_LOGO.jpg?p=facebook");
       airlineService.save(airlineThree);
-
     }
   }
 }

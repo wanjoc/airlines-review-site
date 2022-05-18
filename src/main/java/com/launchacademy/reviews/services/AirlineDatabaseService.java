@@ -26,5 +26,4 @@ public class AirlineDatabaseService implements AirlineService{
   public void save(Airline airline) {
     airlinesRepository.save(airline);
   }
-
 }
