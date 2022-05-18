@@ -27,12 +27,12 @@ const AirlineShow = props => {
 
   return (
     <div>
-      <h1>{airline.name}</h1>
-      <p>{airline.description}</p>
-      <p>{airline.logoUrl}</p>
-      <p>{airline.headquarters}</p>
-      <p>{airline.contactNumber}</p>
-      <p>{airline.homepageUrl}</p>
+      <h1 className="airline-title">{airline.name}</h1>
+      <p className="airline-description">{airline.description}</p>
+      <p className="airline-logoUrl">{airline.logoUrl}</p>
+      <p className="airline-headquarters">{airline.headquarters}</p>
+      <p className="airline-contactNumber">{airline.contactNumber}</p>
+      <p className="airline-homepageUrl">{airline.homepageUrl}</p>
       <Link to={"/airlines"}>Back to airlines</Link> |{" "}
     </div>
   )
