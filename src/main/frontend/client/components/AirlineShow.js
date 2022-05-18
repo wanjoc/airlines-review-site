@@ -36,7 +36,7 @@ const AirlineShow = props => {
       />
       <p className="airline-headquarters">{airline.headquarters}</p>
       <p className="airline-contactNumber">{airline.contactNumber}</p>
-      <a className="airline-homepageUrl" href={airline.homepageUrl}>
+      <a className="airline-homepageUrl" href={airline.homepageUrl} target="_blank">
         {airline.name} Home Page
       </a>
       <br />
