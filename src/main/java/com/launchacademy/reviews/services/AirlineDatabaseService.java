@@ -1,13 +1,17 @@
 package com.launchacademy.reviews.services;
 
+import com.launchacademy.reviews.exceptionHandling.AirlineNotFoundException;
 import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.repositories.AirlinesRepository;
+
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AirlineDatabaseService implements AirlineService{
+public class AirlineDatabaseService implements AirlineService {
 
   private AirlinesRepository airlinesRepository;
 
@@ -25,5 +29,15 @@ public class AirlineDatabaseService implements AirlineService{
   @Override
   public void save(Airline airline) {
     airlinesRepository.save(airline);
+  }
+
+  @Override
+  public Airline findById(Long id) {
+    Optional<Airline> airline = airlinesRepository.findById(id);
+    if (airline.isPresent()) {
+      return airline.get();
+    } else {
+      throw new AirlineNotFoundException();
+    }
   }
 }

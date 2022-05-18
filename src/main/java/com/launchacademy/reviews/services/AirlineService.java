@@ -6,4 +6,6 @@ import java.util.List;
 public interface AirlineService {
   List<Airline> findAll();
   void save(Airline airline);
+
+  Airline findById(Long id);
 }
