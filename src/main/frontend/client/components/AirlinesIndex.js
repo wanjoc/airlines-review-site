@@ -34,8 +34,7 @@ const AirlinesIndex = () => {
       <Link to={"/airlines/new"}>Add a new Airline</Link>
       {airlineTiles}
     </>
-  ) 
-   
+  )  
 }
 
 export default AirlinesIndex
