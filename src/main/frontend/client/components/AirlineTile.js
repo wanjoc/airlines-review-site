@@ -1,7 +1,6 @@
 import React from "react"
 
-const AirlineTile = props => {
-  const { name } = props.airline
+const AirlineTile = ({airplane: {name}})=> {
   return <h2>{name}</h2>
 }
 

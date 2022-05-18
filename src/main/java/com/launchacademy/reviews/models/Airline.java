@@ -32,7 +32,6 @@ public class Airline {
   @Column(name="description", nullable = false)
   private String description;
 
-  @NotBlank
   @Column(name="logo_url")
   private String logoUrl;
 
