@@ -3,6 +3,8 @@ import { Redirect } from "react-router"
 import { Link } from "react-router-dom"
 import _ from "lodash"
 
+import ErrorList from "./ErrorList"
+
 const NewAirlineForm = () => {
   const [formPayload, setFormPayload] = useState({
     name: "",
@@ -44,9 +46,26 @@ const NewAirlineForm = () => {
     }
   }
 
+  const validForSubmission = () => {
+    let submitErrors = {}
+    const requiredFields = Object.keys(formPayload)
+    requiredFields.forEach(field => {
+      if (formPayload[field].trim() === "") {
+        submitErrors = {
+          ...submitErrors,
+          [field]: "is blank"
+        }
+      }
+      setErrors(submitErrors)
+      return _.isEmpty(submitErrors)
+    })
+}
+
   const handleSubmit = event => {
     event.preventDefault()
-    addAirline()
+    if(validForSubmission()) {
+        addAirline()
+    }
   }
 
   const handleInputChange = event => {
@@ -55,7 +74,7 @@ const NewAirlineForm = () => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-
+  
   if (shouldRedirect) {
     return <Redirect push to={`/airlines/${id}`} />
   }
@@ -65,6 +84,7 @@ const NewAirlineForm = () => {
       <h1>Add A New Airline</h1>
       <Link to={"/airlines"}>Back to airlines</Link>
       <form className="airline-form" onSubmit={handleSubmit}>
+        <ErrorList errors={errors} />
         <div>
           <label htmlFor="name">Name: </label>
           <input
@@ -73,7 +93,6 @@ const NewAirlineForm = () => {
             type="text"
             value={formPayload.name}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div>
@@ -84,7 +103,6 @@ const NewAirlineForm = () => {
             type="text"
             value={formPayload.description}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div>
@@ -105,7 +123,6 @@ const NewAirlineForm = () => {
             type="text"
             value={formPayload.headquarters}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div>
@@ -116,7 +133,6 @@ const NewAirlineForm = () => {
             type="text"
             value={formPayload.contactNumber}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div>
@@ -127,10 +143,8 @@ const NewAirlineForm = () => {
             type="text"
             value={formPayload.homepageUrl}
             onChange={handleInputChange}
-            required
           />
         </div>
-
         <input className="button" type="submit" value="Submit" />
       </form>
     </div>
