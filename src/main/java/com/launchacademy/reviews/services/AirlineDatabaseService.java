@@ -27,8 +27,8 @@ public class AirlineDatabaseService implements AirlineService {
   }
 
   @Override
-  public void save(Airline airline) {
-    airlinesRepository.save(airline);
+  public Airline save(Airline airline) {
+    return airlinesRepository.save(airline);
   }
 
   @Override
