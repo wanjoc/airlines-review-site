@@ -52,7 +52,7 @@ const ReviewForm = props => {
         }
       }
       const responseBody = await response.json()
-      props.success(true)
+      props.keepReviewFormOpen(false)
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -85,6 +85,8 @@ const ReviewForm = props => {
             required
             type="number"
             step="1"
+            min="1"
+            max="5"
             name="numberOfStars"
             id="numberOfStars"
             value={newReview.numberOfStars}

@@ -8,7 +8,6 @@ const AirlineShow = props => {
   let location = useLocation()
   const [airline, setAirline] = useState({ reviews: [] })
   const [showReviewForm, setShowReviewForm] = useState(false)
-  const [successfulSubmission, setSuccessfulSubmission] = useState(false)
   const airlineId = props.match.params.id
 
   const fetchAirline = async () => {
@@ -30,31 +29,20 @@ const AirlineShow = props => {
     fetchAirline()
   }, [location.pathname])
 
-  let reviewForm = ""
-
   const handleClick = e => {
-    if (!showReviewForm) {
-      setShowReviewForm(true)
-    } else {
-      setShowReviewForm(false)
-    }
+    setShowReviewForm(!showReviewForm)
   }
 
-  const success = output => {
-    setSuccessfulSubmission(output)
+  const keepReviewFormOpen = output => {
+    setShowReviewForm(output)
     window.location.reload()
-    setShowReviewForm(false)
-  }
-
-  if (showReviewForm) {
-    reviewForm = <ReviewForm airlineId={airline.id} success={success} />
   }
 
   return (
     <>
       <h1 className="airline-title">{airline.name}</h1>
       <button onClick={handleClick}>Add A Review</button>
-      {reviewForm}
+      {showReviewForm && <ReviewForm airlineId={airline.id} keepReviewFormOpen={keepReviewFormOpen} />}
       <p className="airline-description">{airline.description}</p>
       <img
         className="airline-logoUrl"
