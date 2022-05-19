@@ -25,5 +25,16 @@ public class ExceptionHelper {
     responseBody.put("errors", errorList);
     return new ResponseEntity<>(responseBody, HttpStatus.UNPROCESSABLE_ENTITY);
   }
+
+  @ExceptionHandler(value = { ReviewNotCreatedException.class })
+  public ResponseEntity<Map<String, List>> ReviewNotCreatedException(ReviewNotCreatedException ex) {
+    System.out.println("Could not create review");
+    List<String> errorList = new ArrayList<>();
+    errorList.add(ex.getMessage());
+    Map<String, List> responseBody = new HashMap<>();
+    responseBody.put("errors", errorList);
+    return new ResponseEntity<>(responseBody, HttpStatus.UNPROCESSABLE_ENTITY);
+  }
+
 }
 
