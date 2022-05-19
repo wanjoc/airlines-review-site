@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react"
 
-const ReviewsIndex = (props) => {
+import ReviewTile from "./ReviewTile"
 
-    const reviews = props.reviews?.map(review=>{
-        <aside key={review.id}>
-            <p><strong>{review.reviewerName} `(${review.numberOfStars})`</strong></p>
-            <p>{comment}</p>
-        </aside>
-    })
+const ReviewsIndex = props => {
+  const reviewTiles = props.reviews?.map(review => {
+    return <ReviewTile key={review.id} airline={review} />
+  })
+
   return (
-    <div>{reviews}</div>
+    <div>
+      <h2>Reviews</h2>
+      {reviewTiles}
+    </div>
   )
 }
 
