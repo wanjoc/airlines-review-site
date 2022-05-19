@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import AirlineTile from "./AirlineTile"
 
@@ -28,7 +29,12 @@ const AirlinesIndex = () => {
     return <AirlineTile key={airline.id} airline={airline} />
   })
 
-  return <div>{airlineTiles}</div>
+  return(
+    <>
+      <Link to={"/airlines/new"}>Add a new Airline</Link>
+      {airlineTiles}
+    </>
+  )  
 }
 
 export default AirlinesIndex
