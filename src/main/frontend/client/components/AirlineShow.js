@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useLocation, Link } from "react-router-dom"
 
-import ReviewsIndex from "./ReviewsIndex"
+import ReviewList from "./ReviewList"
 
 const AirlineShow = props => {
   let location = useLocation()
@@ -38,7 +38,7 @@ const AirlineShow = props => {
       />
       <p className="airline-headquarters">{airline.headquarters}</p>
       <p className="airline-contactNumber">{airline.contactNumber}</p>
-      <ReviewsIndex reviews={airline.reviews} />
+      <ReviewList reviews={airline.reviews} />
       <a className="airline-homepageUrl" href={airline.homepageUrl} target="_blank">
         {airline.name} Home Page
       </a>

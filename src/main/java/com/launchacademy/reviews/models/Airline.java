@@ -1,7 +1,7 @@
 package com.launchacademy.reviews.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.util.Set;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,5 +52,5 @@ public class Airline {
 
   @OneToMany(mappedBy="airline")
   @JsonIgnoreProperties("airline")
-  private Set<Review> reviews;
+  private List<Review> reviews;
 }

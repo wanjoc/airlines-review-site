@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react"
 
-import ReviewTile from './ReviewTile'
+import ReviewTile from "./ReviewTile"
 
-const ReviewsIndex = (props) => {
-
+const ReviewList = props => {
   const reviewTiles = props.reviews?.map(review => {
     return <ReviewTile key={review.id} review={review} />
   })
@@ -11,9 +10,9 @@ const ReviewsIndex = (props) => {
   return (
     <div>
       <h2>Reviews</h2>
-      {reviewTiles}
+      <ul>{reviewTiles}</ul>
     </div>
   )
 }
 
-export default ReviewsIndex
+export default ReviewList

@@ -12,6 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,6 +32,7 @@ public class Review {
   @Column(name="reviewer_name")
   private String reviewerName;
 
+  @NotNull
   @Min(value=1)
   @Max(value=5)
   @Column(name="number_of_stars", nullable=false)
