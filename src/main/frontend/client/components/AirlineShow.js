@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { useLocation, Link } from "react-router-dom"
 
+import ReviewsIndex from "./ReviewsIndex"
+
 const AirlineShow = props => {
   let location = useLocation()
-  const [airline, setAirline] = useState({})
+  const [airline, setAirline] = useState({reviews: []})
   const airlineId = props.match.params.id
 
   const fetchAirline = async () => {
@@ -36,6 +38,7 @@ const AirlineShow = props => {
       />
       <p className="airline-headquarters">{airline.headquarters}</p>
       <p className="airline-contactNumber">{airline.contactNumber}</p>
+      <ReviewsIndex reviews={airline.reviews} />
       <a className="airline-homepageUrl" href={airline.homepageUrl} target="_blank">
         {airline.name} Home Page
       </a>
