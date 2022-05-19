@@ -35,7 +35,7 @@ public class ReviewDatabaseService implements ReviewService {
     Review review = new Review();
     review.setReviewerName(reviewForm.getReviewerName());
     review.setNumberOfStars(reviewForm.getNumberOfStars());
-    review.setComment(review.getComment());
+    review.setComment(reviewForm.getComment());
 
     Airline airline = airlineService.findById(reviewForm.getAirlineId());
     review.setAirline(airline);
