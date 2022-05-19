@@ -50,7 +50,7 @@ const NewAirlineForm = () => {
     let submitErrors = {}
     const requiredFields = Object.keys(formPayload)
     requiredFields.forEach(field => {
-      if (formPayload[field].trim() === "") {
+      if (field !== "logoUrl" && formPayload[field].trim() === "") {
         submitErrors = {
           ...submitErrors,
           [field]: "is blank"
