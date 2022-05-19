@@ -38,6 +38,7 @@ public class ReviewDatabaseService implements ReviewService {
     review.setComment(review.getComment());
 
     Airline airline = airlineService.findById(reviewForm.getAirlineId());
+    review.setAirline(airline);
 
     return reviewsRepository.save(review);
   }
