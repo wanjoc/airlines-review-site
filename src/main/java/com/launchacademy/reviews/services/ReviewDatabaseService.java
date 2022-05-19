@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewDatabaseService implements ReviewService {
+
   private ReviewsRepository reviewsRepository;
 
   private AirlineService airlineService;
@@ -20,6 +21,7 @@ public class ReviewDatabaseService implements ReviewService {
     this.reviewsRepository = reviewsRepository;
     this.airlineService = airlineService;
   }
+
   @Override
   public List<Review> findAll() {
     return (List<Review>) reviewsRepository.findAll();
@@ -35,9 +37,10 @@ public class ReviewDatabaseService implements ReviewService {
     Review review = new Review();
     review.setReviewerName(reviewForm.getReviewerName());
     review.setNumberOfStars(reviewForm.getNumberOfStars());
-    review.setComment(review.getComment());
+    review.setComment(reviewForm.getComment());
 
     Airline airline = airlineService.findById(reviewForm.getAirlineId());
+    review.setAirline(airline);
 
     return reviewsRepository.save(review);
   }

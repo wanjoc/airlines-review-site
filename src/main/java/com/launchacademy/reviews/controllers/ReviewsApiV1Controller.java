@@ -6,6 +6,7 @@ import com.launchacademy.reviews.models.ReviewForm;
 import com.launchacademy.reviews.services.ReviewService;
 import java.util.HashMap;
 import java.util.Map;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 @RequestMapping("/api/v1/reviews")
 public class ReviewsApiV1Controller {
+
   private ReviewService reviewService;
 
   @Autowired
@@ -26,18 +29,18 @@ public class ReviewsApiV1Controller {
   }
 
   @PostMapping
-  public ResponseEntity<Map<String, Review>> createReview(@RequestBody ReviewForm commentForm, BindingResult bindingResult) {
+  public ResponseEntity<Map<String, Review>> createReview(
+      @RequestBody @Valid ReviewForm commentForm, BindingResult bindingResult) {
     try {
       if (bindingResult.hasFieldErrors()) {
         Map<String, String> errorsList = new HashMap<>();
-        for(FieldError fieldError : bindingResult.getFieldErrors()){
+        for (FieldError fieldError : bindingResult.getFieldErrors()) {
           errorsList.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
         Map<String, Map> errors = new HashMap<>();
         errors.put("errors", errorsList);
         return new ResponseEntity(errors, HttpStatus.UNPROCESSABLE_ENTITY);
-      }
-      else {
+      } else {
         Review newReview = reviewService.createReview(commentForm);
         Map<String, Review> dataMap = new HashMap<>();
         dataMap.put("review", newReview);

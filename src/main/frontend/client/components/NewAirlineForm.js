@@ -59,7 +59,7 @@ const NewAirlineForm = () => {
       setErrors(submitErrors)
       return _.isEmpty(submitErrors)
     })
-}
+  }
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -80,7 +80,7 @@ const NewAirlineForm = () => {
   }
 
   return (
-    <div>
+    <>
       <h1>Add A New Airline</h1>
       <Link to={"/airlines"}>Back to airlines</Link>
       <form className="airline-form" onSubmit={handleSubmit}>
@@ -147,7 +147,7 @@ const NewAirlineForm = () => {
         </div>
         <input className="button" type="submit" value="Submit" />
       </form>
-    </div>
+    </>
   )
 }
 

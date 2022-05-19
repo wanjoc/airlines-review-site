@@ -6,7 +6,7 @@ import ReviewForm from "./ReviewForm"
 
 const AirlineShow = props => {
   let location = useLocation()
-  const [airline, setAirline] = useState({reviews: []})
+  const [airline, setAirline] = useState({ reviews: [] })
   const [showReviewForm, setShowReviewForm] = useState(false)
   const [successfulSubmission, setSuccessfulSubmission] = useState(false)
   const airlineId = props.match.params.id
@@ -32,25 +32,26 @@ const AirlineShow = props => {
 
   let reviewForm = ""
 
-  const handleClick = (e) => {
-    if(!showReviewForm) {
+  const handleClick = e => {
+    if (!showReviewForm) {
       setShowReviewForm(true)
     } else {
       setShowReviewForm(false)
     }
-  } 
+  }
 
   const success = output => {
     setSuccessfulSubmission(output)
+    window.location.reload()
     setShowReviewForm(false)
   }
 
-  if(showReviewForm) {
+  if (showReviewForm) {
     reviewForm = <ReviewForm airlineId={airline.id} success={success} />
   }
 
   return (
-    <div>
+    <>
       <h1 className="airline-title">{airline.name}</h1>
       <button onClick={handleClick}>Add A Review</button>
       {reviewForm}
@@ -63,12 +64,16 @@ const AirlineShow = props => {
       <p className="airline-headquarters">{airline.headquarters}</p>
       <p className="airline-contactNumber">{airline.contactNumber}</p>
       <ReviewList reviews={airline.reviews} />
-      <a className="airline-homepageUrl" href={airline.homepageUrl} target="_blank">
+      <a
+        className="airline-homepageUrl"
+        href={airline.homepageUrl}
+        target="_blank"
+      >
         {airline.name} Home Page
       </a>
       <br />
       <Link to={"/airlines"}>Back to airlines</Link> |{" "}
-    </div>
+    </>
   )
 }
 
