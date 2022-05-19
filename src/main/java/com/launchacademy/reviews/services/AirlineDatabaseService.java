@@ -40,4 +40,10 @@ public class AirlineDatabaseService implements AirlineService {
       throw new AirlineNotFoundException();
     }
   }
+
+  @Override
+  public Airline findByName(String name) {
+    return airlinesRepository.findByName(name);
+  }
+
 }
