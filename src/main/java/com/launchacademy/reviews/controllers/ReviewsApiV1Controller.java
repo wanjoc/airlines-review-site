@@ -5,12 +5,12 @@ import com.launchacademy.reviews.models.Review;
 import com.launchacademy.reviews.models.ReviewForm;
 import com.launchacademy.reviews.services.ReviewService;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +26,24 @@ public class ReviewsApiV1Controller {
   }
 
   @PostMapping
-  public ResponseEntity<Map<String, Review>> create(@RequestBody ReviewForm commentForm) {
+  public ResponseEntity<Map<String, Review>> createReview(@RequestBody ReviewForm commentForm, BindingResult bindingResult) {
     try {
-      Review persistedReview = reviewService.createReview(commentForm);
-      Map<String, Review> dataMap = new HashMap<>();
-      dataMap.put("review", persistedReview);
-      return new ResponseEntity<Map<String, Review>>(dataMap, HttpStatus.CREATED);
-    } catch (IllegalArgumentException ex) {
+      if (bindingResult.hasFieldErrors()) {
+        Map<String, String> errorsList = new HashMap<>();
+        for(FieldError fieldError : bindingResult.getFieldErrors()){
+          errorsList.put(fieldError.getField(), fieldError.getDefaultMessage());
+        }
+        Map<String, Map> errors = new HashMap<>();
+        errors.put("errors", errorsList);
+        return new ResponseEntity(errors, HttpStatus.UNPROCESSABLE_ENTITY);
+      }
+      else {
+        Review newReview = reviewService.createReview(commentForm);
+        Map<String, Review> dataMap = new HashMap<>();
+        dataMap.put("review", newReview);
+        return new ResponseEntity(dataMap, HttpStatus.CREATED);
+      }
+    } catch (Exception e) {
       throw new ReviewNotCreatedException();
     }
   }
