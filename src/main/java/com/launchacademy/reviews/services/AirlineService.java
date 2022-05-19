@@ -10,4 +10,6 @@ public interface AirlineService {
   Airline save(Airline airline);
 
   Airline findById(Long id);
+
+  Airline findByName(String name);
 }

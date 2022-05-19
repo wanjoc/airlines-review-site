@@ -1,10 +1,10 @@
 package com.launchacademy.reviews.repositories;
 
-import com.launchacademy.reviews.models.Airline;
+import com.launchacademy.reviews.models.Review;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AirlinesRepository extends CrudRepository<Airline, Long> {
-  Airline findByName(String name);
+public interface ReviewsRepository extends CrudRepository<Review, Long> {
+
 }
