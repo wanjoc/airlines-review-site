@@ -1,131 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 body {
-    min-height: 100vh;
-    font-family: 'Poppins';
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: center;
 }
 
 .review-container {
-    width: 40%;
-    background: rgb(33, 32, 50);
-    color: #fff;
-    margin: 2rem;
-    box-shadow: 1px 3px 2px rgba(0, 0, 0, .2);
-    padding: 2.5rem;
+  width: 40%;
+  background: rgb(33, 32, 50);
+  color: #fff;
+  margin: 2rem;
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem;
 }
 
 h2 {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .input-field {
-    background: rgb(38, 37, 55);
-    width: 100%;
-    border: 1px solid #6F6C7C;
-    padding: .85rem;
-    border-radius: 5px;
+  background: rgb(38, 37, 55);
+  width: 75%;
+  border: 1px solid #6f6c7c;
+  padding: 1rem 1.2rem;
+  border-radius: 5px;
+  margin: auto;
 }
 
 .input-field input {
-    border: none;
-    background: transparent;
-    outline: none;
-    color: #8C8C9F;
-    width: calc(100% - 3.2rem);
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #8c8c9f;
+  width: 90%;
 }
 
 .input-field i,
 .input-field input::placeholder {
-    color: #6F6C7C;
+  color: #6f6c7c;
 }
 
-
 .cards {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .cards .card {
-    width: 100%;
-    margin-bottom: .7rem;
-    background: rgb(45, 43, 64);
-    border-radius: 5px;
+  width: 100%;
+  margin-bottom: 0.7rem;
+  background: rgb(45, 43, 64);
+  border-radius: 5px;
 }
 
-.card>* {
-    padding: 1rem 1.2rem;
+.card > * {
+  padding: 1rem 1.2rem;
 }
 
 .card-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .img {
-    width: 50px;
-    height: 50px;
-    background: purple;
-    border-radius: 50%;
-    outline: none;
+  width: 50px;
+  height: 50px;
+  background: purple;
+  border-radius: 50%;
+  outline: none;
 }
 
 .name .one {
-    background: orange;
+  background: orange;
 }
 
 .name,
 .name .img {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .name .img {
-    justify-content: center;
-}
-
-.rate i {
-    color: yellow;
+  justify-content: center;
 }
 
 .card-content {
-    margin: 0;
-    padding-top: 0;
+  margin: 0;
+  padding-top: 0;
 }
 
 .card-content p {
-    font-size: .9rem;
-    color: rgb(224, 224, 230);
+  font-size: 0.9rem;
+  color: rgb(224, 224, 230);
 }
 
 .card-action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-action span {
-    font-size: .8rem;
-    color: RGB(101, 101, 114);
+  font-size: 0.8rem;
+  color: RGB(101, 101, 114);
 }
 
 .card-action .btn {
-    padding: .3rem .7rem;
-    background: transparent;
-    border: 1px solid #000;
-    border-radius: 2px;
-    color: #8C8C9F;
-    cursor: pointer;
-    transition: .2s ease-in-out;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 2px;
+  color: #8c8c9f;
+  transition: 0.2s ease-in-out;
 }
 
 .btn:hover {
-    background: #000;
-    color: #fff;
+  background: rgb(45, 43, 64);
+  color: #fff;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+  padding: 0.3rem;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+  padding: 0.3rem;
+}
+
+.fa-linkedin {
+  background: #1b74b8;
+  color: white;
+  padding: 0.3rem;
+}
+
+.fa-instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  padding: 0.3rem;
 }
