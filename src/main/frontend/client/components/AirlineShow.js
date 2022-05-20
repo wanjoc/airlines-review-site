@@ -39,10 +39,23 @@ const AirlineShow = props => {
   }
 
   return (
-    <>
+    <div className="grid-container">
+      <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6">
+        <div class="cell">cell</div>
+        <div class="cell">cell</div>
+        <div class="cell">cell</div>
+        <div class="cell">cell</div>
+        <div class="cell">cell</div>
+        <div class="cell">cell</div>
+      </div>
       <h1 className="airline-title">{airline.name}</h1>
       <button onClick={handleClick}>Add A Review</button>
-      {showReviewForm && <ReviewForm airlineId={airline.id} keepReviewFormOpen={keepReviewFormOpen} />}
+      {showReviewForm && (
+        <ReviewForm
+          airlineId={airline.id}
+          keepReviewFormOpen={keepReviewFormOpen}
+        />
+      )}
       <p className="airline-description">{airline.description}</p>
       <img
         className="airline-logoUrl"
@@ -61,7 +74,7 @@ const AirlineShow = props => {
       </a>
       <br />
       <Link to={"/airlines"}>Back to airlines</Link> |{" "}
-    </>
+    </div>
   )
 }
 

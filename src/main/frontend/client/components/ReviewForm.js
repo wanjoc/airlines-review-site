@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import _ from "lodash"
+import "../assets/scss/foundation/reviewFormStyle.scss"
 
 import ErrorList from "./ErrorList"
 
@@ -67,46 +68,64 @@ const ReviewForm = props => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <ErrorList errors={errors} />
-        <label htmlFor="reviewerName">
-          Reviewer Name:
-          <input
-            type="text"
-            name="reviewerName"
-            id="reviewerName"
-            value={newReview.reviewerName}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="numberOfStars">
-          Number of Stars:
-          <input
-            required
-            type="number"
-            step="1"
-            min="1"
-            max="5"
-            name="numberOfStars"
-            id="numberOfStars"
-            value={newReview.numberOfStars}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="comment">
-          Comment:
-          <textarea
-            name="comment"
-            id="comment"
-            cols="30"
-            rows="10"
-            value={newReview.comment}
-            onChange={handleChange}
-          ></textarea>
-        </label>
-
-        <input type="submit" value="Add Review" />
-      </form>
+      <div className="review-form">
+        <div className="appFormContainer">
+          <div className="appFormContainer grid-x">
+            <h1 className="appForm">We appriacite your feedback</h1>
+            <form onSubmit={handleSubmit}>
+              <ErrorList errors={errors} />
+              <div class="grid-x grid-padding-x">
+                <div class="cell">
+                  <label htmlFor="reviewerName">
+                    Reviewer Name:
+                    <input
+                      type="text"
+                      name="reviewerName"
+                      id="reviewerName"
+                      value={newReview.reviewerName}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </div>
+              </div>
+              <div class="cell">
+                <label htmlFor="numberOfStars">
+                  Number of Stars:
+                  <input
+                    required
+                    type="number"
+                    step="1"
+                    min="1"
+                    max="5"
+                    name="numberOfStars"
+                    id="numberOfStars"
+                    value={newReview.numberOfStars}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div class="cell">
+                <label htmlFor="comment">
+                  Comment:
+                  <textarea
+                    name="comment"
+                    id="comment"
+                    cols="30"
+                    rows="10"
+                    value={newReview.comment}
+                    onChange={handleChange}
+                  ></textarea>
+                </label>
+              </div>
+              <label for="exampleFileUpload" class="button">Upload File</label>
+<input type="file" id="exampleFileUpload" class="show-for-sr"></input>
+              <div className="button-group align-justify">
+                <input type="submit" value="Add Review" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
