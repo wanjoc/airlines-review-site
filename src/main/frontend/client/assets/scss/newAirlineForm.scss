@@ -15,7 +15,7 @@
     position: relative;
     overflow: hidden;
     padding: 50px 0;
-    width: 800px;
+    width: 80%;
     margin: 4rem auto 0;
     z-index: 2;
 }
@@ -58,7 +58,7 @@
 .airline-form {
     position: relative;
     margin: 4rem auto 0;
-    height: 1000px;
+    height: 80%;
     width: 80%;
     display: flex;
     align-self: center;
@@ -73,13 +73,17 @@
     margin-top: -4rem;
 }
 
+.airline-form-field {
+    margin-bottom: 2rem;
+}
+
 .airline-form label {
     font-size: 2.5rem;
 }
 
 .airline-form-content {
     position: relative;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     width: 80%;
     background: lightblue;
     padding: 2rem;

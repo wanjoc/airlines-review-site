@@ -94,7 +94,7 @@ const NewAirlineForm = () => {
       <form className="airline-form" onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
         <div className="airline-form-content">
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="name">Name: </label>
             <input
               name="name"
@@ -104,7 +104,7 @@ const NewAirlineForm = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="description">Description: </label>
             <input
               name="description"
@@ -114,7 +114,7 @@ const NewAirlineForm = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="logoUrl">Logo Url: </label>
             <input
               name="logoUrl"
@@ -124,7 +124,7 @@ const NewAirlineForm = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="headquarters">Headquarters: </label>
             <input
               name="headquarters"
@@ -134,7 +134,7 @@ const NewAirlineForm = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="contactNumber">Contact Number: </label>
             <input
               name="contactNumber"
@@ -144,7 +144,7 @@ const NewAirlineForm = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div>
+          <div className="airline-form-field">
             <label htmlFor="homepageUrl">Homepage Url: </label>
             <input
               name="homepageUrl"
