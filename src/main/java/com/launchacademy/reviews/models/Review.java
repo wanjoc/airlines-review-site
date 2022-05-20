@@ -21,24 +21,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="reviews")
+@Table(name = "reviews")
 public class Review {
+
   @Id
   @SequenceGenerator(name = "review_generator", sequenceName = "reviews_id_seq", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "review_generator")
   @Column(name = "id", nullable = false, unique = true)
   private Long id;
 
-  @Column(name="reviewer_name")
+  @Column(name = "reviewer_name")
   private String reviewerName;
 
   @NotNull
-  @Min(value=1)
-  @Max(value=5)
-  @Column(name="number_of_stars", nullable=false)
+  @Min(value = 1)
+  @Max(value = 5)
+  @Column(name = "number_of_stars", nullable = false)
   private Integer numberOfStars;
 
-  @Column(name="comment")
+  @Column(name = "comment")
   private String comment;
 
   @ManyToOne
