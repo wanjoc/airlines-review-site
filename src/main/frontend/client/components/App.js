@@ -4,6 +4,9 @@ import "foundation-sites"
 import $ from "jquery"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
+import "../assets/scss/main.scss"
+
+
 import AirlinesIndex from "./AirlinesIndex"
 import AirlineShow from "./AirlineShow"
 import NewAirlineForm from "./NewAirlineForm"

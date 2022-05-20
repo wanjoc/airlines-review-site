@@ -14,8 +14,11 @@ const ErrorList = props => {
       )
     })
     return (
-      <div className="callout alert">
+      <div className="callout alert" data-closable>
         <ul>{listItems}</ul>
+        <button className="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     )
   } else {
