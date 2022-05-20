@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-container {
+    width: 40%;
+    background: rgb(33, 32, 50);
+    color: #fff;
+    margin: 2rem;
+    box-shadow: 1px 3px 2px rgba(0, 0, 0, .2);
+    padding: 2.5rem;
+}
+
+h2 {
+    margin-bottom: 3rem;
+}
+
+.input-field {
+    background: rgb(38, 37, 55);
+    width: 100%;
+    border: 1px solid #6F6C7C;
+    padding: .85rem;
+    border-radius: 5px;
+}
+
+.input-field input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #8C8C9F;
+    width: calc(100% - 3.2rem);
+}
+
+.input-field i,
+.input-field input::placeholder {
+    color: #6F6C7C;
+}
+
+
+.cards {
+    margin-top: 2.5rem;
+}
+
+.cards .card {
+    width: 100%;
+    margin-bottom: .7rem;
+    background: rgb(45, 43, 64);
+    border-radius: 5px;
+}
+
+.card>* {
+    padding: 1rem 1.2rem;
+}
+
+.card-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    background: purple;
+    border-radius: 50%;
+    outline: none;
+}
+
+.name .one {
+    background: orange;
+}
+
+.name,
+.name .img {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.name .img {
+    justify-content: center;
+}
+
+.rate i {
+    color: yellow;
+}
+
+.card-content {
+    margin: 0;
+    padding-top: 0;
+}
+
+.card-content p {
+    font-size: .9rem;
+    color: rgb(224, 224, 230);
+}
+
+.card-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-action span {
+    font-size: .8rem;
+    color: RGB(101, 101, 114);
+}
+
+.card-action .btn {
+    padding: .3rem .7rem;
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: 2px;
+    color: #8C8C9F;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
