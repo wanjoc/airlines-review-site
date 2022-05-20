@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+*, *::before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// MOBILIE FIRST
+
+/* CONCAVE EFFECT */
+/* Resource: https://stackoverflow.com/questions/40738978/how-do-i-create-concave-shaped-borders-around-div-elements */
+
+.concave {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+    width: 800px;
+    margin: 4rem auto 0;
+    z-index: 2;
+}
+
+.airline-form-header {
+    position: relative;
+    background: #b3b3b3;
+    height: 90px;
+}
+
+.airline-form-header:before,
+.airline-form-header:after {
+    box-shadow: 0 0 0 15px black;
+    border-radius: 100%;
+    position: absolute;
+    height: 80px;  /* You can change height to increase or decrease concave radius */ 
+    content: '';
+    right: -20%;
+    left: -20%;
+    top: 100%;
+    padding:2em;
+    z-index: 2;
+}
+
+.airline-form-header:after {
+    bottom: 100%;
+    top: auto;
+}
+
+.airline-form-title {
+    font-family: 'Coiny';
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+    padding-top: 0.8rem;
+}
+
+
+.airline-form {
+    position: relative;
+    margin: 4rem auto 0;
+    height: 1000px;
+    width: 80%;
+    display: flex;
+    align-self: center;
+    color: black;
+    
+    font-family: 'Poppins', 'Arial';
+    flex-direction: column;
+    margin-bottom: 20rem;
+    border: 3px solid #0C74BA;
+    padding: 2em;
+    box-shadow: 0 0 10px #197BBD;
+    margin-top: -4rem;
+}
+
+.airline-form label {
+    font-size: 2.5rem;
+}
+
+.airline-form-content {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    background: lightblue;
+    padding: 2rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+input {
+    font-family: inherit;
+    text-align: inherit;
+    margin-bottom: .75em;
+    padding: .25em;
+    border: 2px solid #0C74BA;
+    width: 80%;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #197BBD;
+  }
+
+.airline-form-submit {
+    display: inline-block;
+    margin: 1.5rem auto 0;
+    padding: 1em 1.5em;
+    font-size: 1.5rem;
+    font-family: 'Poppins', 'Arial';
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+}

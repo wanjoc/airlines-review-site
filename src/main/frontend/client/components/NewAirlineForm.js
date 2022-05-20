@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Redirect } from "react-router"
 import { Link } from "react-router-dom"
 import _ from "lodash"
+import "../assets/scss/newAirlineForm.scss"
 
 import ErrorList from "./ErrorList"
 
@@ -80,74 +81,83 @@ const NewAirlineForm = () => {
   }
 
   return (
-    <div>
-      <h1>Add A New Airline</h1>
+    <>
       <Link to={"/airlines"}>Back to airlines</Link>
+
+      
+
+      <div className="concave">
+        <div className="airline-form-header">
+          <p className="airline-form-title">Add A New Airline</p>
+        </div>
+      </div>
       <form className="airline-form" onSubmit={handleSubmit}>
-        <ErrorList errors={errors} />
-        <div>
-          <label htmlFor="name">Name: </label>
-          <input
-            name="name"
-            id="name"
-            type="text"
-            value={formPayload.name}
-            onChange={handleInputChange}
-          />
+      <ErrorList errors={errors} />
+        <div className="airline-form-content">
+          <div>
+            <label htmlFor="name">Name: </label>
+            <input
+              name="name"
+              id="name"
+              type="text"
+              value={formPayload.name}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="description">Description: </label>
+            <input
+              name="description"
+              id="description"
+              type="text"
+              value={formPayload.description}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="logoUrl">Logo Url: </label>
+            <input
+              name="logoUrl"
+              id="logoUrl"
+              type="text"
+              value={formPayload.logoUrl}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="headquarters">Headquarters: </label>
+            <input
+              name="headquarters"
+              id="headquarters"
+              type="text"
+              value={formPayload.headquarters}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="contactNumber">Contact Number: </label>
+            <input
+              name="contactNumber"
+              id="contactNumber"
+              type="text"
+              value={formPayload.contactNumber}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="homepageUrl">Homepage Url: </label>
+            <input
+              name="homepageUrl"
+              id="homepageUrl"
+              type="text"
+              value={formPayload.homepageUrl}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="description">Description: </label>
-          <input
-            name="description"
-            id="description"
-            type="text"
-            value={formPayload.description}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="logoUrl">Logo Url: </label>
-          <input
-            name="logoUrl"
-            id="logoUrl"
-            type="text"
-            value={formPayload.logoUrl}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="headquarters">Headquarters: </label>
-          <input
-            name="headquarters"
-            id="headquarters"
-            type="text"
-            value={formPayload.headquarters}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="contactNumber">Contact Number: </label>
-          <input
-            name="contactNumber"
-            id="contactNumber"
-            type="text"
-            value={formPayload.contactNumber}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="homepageUrl">Homepage Url: </label>
-          <input
-            name="homepageUrl"
-            id="homepageUrl"
-            type="text"
-            value={formPayload.homepageUrl}
-            onChange={handleInputChange}
-          />
-        </div>
-        <input className="button" type="submit" value="Submit" />
+        <input className="airline-form-submit button" type="submit" value="Submit" />
       </form>
-    </div>
+    </>
   )
 }
 
