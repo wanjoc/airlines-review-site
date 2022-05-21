@@ -59,10 +59,12 @@ const NewAirlineForm = () => {
       setErrors(submitErrors)
       return _.isEmpty(submitErrors)
     })
-}
+    return true;
+  }
 
   const handleSubmit = event => {
     event.preventDefault()
+    console.log(validForSubmission())
     if(validForSubmission()) {
         addAirline()
     }
