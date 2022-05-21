@@ -65,6 +65,7 @@ const NewAirlineForm = () => {
   const handleSubmit = event => {
     event.preventDefault()
     if(validForSubmission()) {
+        
         addAirline()
     }
   }
@@ -92,7 +93,7 @@ const NewAirlineForm = () => {
         </div>
       </div>
       <form className="airline-form" onSubmit={handleSubmit}>
-      <ErrorList errors={errors} />
+        <ErrorList errors={errors} />
         <div className="airline-form-content">
           <div className="airline-form-field">
             <label htmlFor="name">Name: </label>

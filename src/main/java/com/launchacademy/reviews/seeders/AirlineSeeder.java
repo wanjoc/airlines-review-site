@@ -39,7 +39,7 @@ public class AirlineSeeder {
       airlineThree.setName("Delta Airlines");
       airlineThree.setDescription("Delta Air Lines, Inc., typically referred to as Delta, is one of the major airlines of the United States and a legacy carrier. One of the world's oldest airlines in operation, Delta is headquartered in Atlanta, Georgia.");
       airlineThree.setHeadquarters("Atlanta, GA");
-      airlineThree.setContactNumber(" 1 (800) 221-1212");
+      airlineThree.setContactNumber("1 (800) 221-1212");
       airlineThree.setHomepageUrl("https://www.delta.com/");
       airlineThree.setLogoUrl("https://mma.prnewswire.com/media/588812/DELTA_AIR_LINES_LOGO.jpg?p=facebook");
       airlineService.save(airlineThree);
