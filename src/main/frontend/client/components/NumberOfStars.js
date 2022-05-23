@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar } from "@fortawesome/free-solid-svg-icons"
 
-const NumberOfStars = ({numberOfStars}) => {
+import "../assets/scss/main.scss"
 
-    
+const NumberOfStars = ({ numberOfStars }) => {
+  const stars = []
 
-  return (
-    <div>
-        {numberOfStars}
-        <i className="fas fa-star"></i>
-    </div>
-  )
+  for (let i = 0; i < numberOfStars; i++) {
+    stars.push(<FontAwesomeIcon key={i} icon={faStar} className="color-orange"/>)
+  }
+
+  return <>{stars}</>
 }
 
 export default NumberOfStars
