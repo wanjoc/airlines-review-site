@@ -1,0 +1,67 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.875rem 6.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}  
+
+nav .flyco-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo-pic {
+    width: 15.625rem;
+}
+
+nav .logo-text {
+    font-family: 'Coiny', cursive;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-indent: -0.8em;
+}
+
+nav .logo-link {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul, nav .logo-text {
+    margin-top: 75px;
+}
+
+nav ul li {
+    list-style: none;
+    /* margin-left: 1.25rem; */
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0.375rem 0.938rem;
+    color: #fff;
+    border-radius: 1.25rem;
+    display: block;
+}
+
+nav ul li a:hover, .active {
+    background: #fff;
+    color: #197BBD;
+}
+
+@media screen and (max-width:810px) {
+    nav ul, nav .logo-text {
+        color: #fff;
+    }
+}
