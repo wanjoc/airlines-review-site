@@ -38,7 +38,6 @@ const NewAirlineForm = () => {
           throw error
         }
       }
-
       const body = await response.json()
       setId(body.airline.id)
       setShouldRedirect(true)
@@ -84,9 +83,6 @@ const NewAirlineForm = () => {
   return (
     <>
       <Link to={"/airlines"}>Back to airlines</Link>
-
-      
-
       <div className="concave">
         <div className="airline-form-header">
           <p className="airline-form-title">Add A New Airline</p>
