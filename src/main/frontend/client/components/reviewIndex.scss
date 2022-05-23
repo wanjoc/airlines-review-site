@@ -9,48 +9,32 @@ body {
 
 .review-container {
   width: 40%;
-  background: rgb(33, 32, 50);
+  background: #204b57;
   color: #fff;
   margin: 2rem;
-  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 3px 2px black;
   padding: 2.5rem;
 }
 
 h2 {
+  margin-top: 3rem;
   margin-bottom: 3rem;
-  text-align: center;
+  margin-left: 3rem;
+  font-family: "Poppins";
+  font-size: 25px;
 }
 
 .input-field {
-  background: rgb(38, 37, 55);
-  width: 75%;
-  border: 1px solid #6f6c7c;
-  padding: 1rem 1.2rem;
-  border-radius: 5px;
-  margin: auto;
-}
-
-.input-field input {
-  border: none;
-  background: transparent;
-  outline: none;
-  color: #8c8c9f;
-  width: 90%;
-}
-
-.input-field i,
-.input-field input::placeholder {
-  color: #6f6c7c;
-}
-
-.cards {
-  margin-top: 2.5rem;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .cards .card {
   width: 100%;
   margin-bottom: 0.7rem;
-  background: rgb(45, 43, 64);
+  background: #204b57;
   border-radius: 5px;
 }
 
@@ -66,27 +50,25 @@ h2 {
   gap: 10px;
 }
 
-.img {
-  width: 50px;
-  height: 50px;
-  background: purple;
-  border-radius: 50%;
-  outline: none;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.name .one {
-  background: orange;
-}
-
-.name,
-.name .img {
+.name {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
 }
 
-.name .img {
-  justify-content: center;
+.name,
+.rate {
+  display: inline-block;
+  gap: 10px;
+  color: #fff;
+  justify-content: space-between;
 }
 
 .card-content {
@@ -96,7 +78,7 @@ h2 {
 
 .card-content p {
   font-size: 0.9rem;
-  color: rgb(224, 224, 230);
+  color: FFFCE8;
 }
 
 .card-action {
@@ -106,8 +88,7 @@ h2 {
 }
 
 .card-action span {
-  font-size: 0.8rem;
-  color: RGB(101, 101, 114);
+  font-size: 0.08rem;
 }
 
 .card-action .btn {
@@ -120,25 +101,25 @@ h2 {
 }
 
 .btn:hover {
-  background: rgb(45, 43, 64);
+  background: #204b57;
   color: #fff;
 }
 
 .fa-facebook {
   background: #3b5998;
-  color: white;
+  color: #fff;
   padding: 0.3rem;
 }
 
 .fa-twitter {
   background: #55acee;
-  color: white;
+  color: #fff;
   padding: 0.3rem;
 }
 
 .fa-linkedin {
   background: #1b74b8;
-  color: white;
+  color: #fff;
   padding: 0.3rem;
 }
 
