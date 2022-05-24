@@ -1,14 +1,22 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons"
 
 import "../assets/scss/main.scss"
 
 const NumberOfStars = ({ numberOfStars }) => {
+  
+  const wholeStars = Math.floor(numberOfStars)
+  const halfStars = numberOfStars - wholeStars
+
   const stars = []
 
-  for (let i = 0; i < numberOfStars; i++) {
+  for (let i = 0; i < wholeStars; i++) {
     stars.push(<FontAwesomeIcon key={i} icon={faStar} className="color-orange"/>)
+  }
+
+  if(halfStars >= 0.5) {
+    stars.push(<FontAwesomeIcon key={stars.length} icon={faStarHalf} className="color-orange"/>)
   }
 
   return <>{stars}</>

@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReviewsRepository extends CrudRepository<Review, Long> {
 
-  @Query("SELECT ROUND(AVG(r.numberOfStars)) FROM Review r where r.airline.id = :airlineId")
+  @Query("SELECT ROUND(AVG(r.numberOfStars), 2) FROM Review r where r.airline.id = :airlineId")
   Double airlineAverageRating(@Param("airlineId") Long airlineId);
 }
