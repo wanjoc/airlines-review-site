@@ -1,18 +1,24 @@
-import React from 'react'
-import facebookLogo from "../imgs/facebooklogo.png";
-import twitterLogo from "../imgs/twitterlogo.png";
-import instagramLogo from "../imgs/instagramlogo.png";
+import React from "react";
 
-import "./Footer.scss"
+import "./Footer.scss";
 
 const Footer = () => {
   return (
     <footer className="social-links">
-    <img src={facebookLogo} alt="Facebook Logo" />
-    <img src={twitterLogo} alt="Twitter Logo" />
-    <img src={instagramLogo} alt="Instagram Logo" />
-  </footer>
-  )
-}
+      <img
+        src="https://airlines-review-images.s3.us-west-2.amazonaws.com/facebooklogo.png"
+        alt="Facebook Logo"
+      />
+      <img
+        src="https://airlines-review-images.s3.us-west-2.amazonaws.com/twitterlogo.png"
+        alt="Twitter Logo"
+      />
+      <img
+        src="https://airlines-review-images.s3.us-west-2.amazonaws.com/instagramlogo.png"
+        alt="Instagram Logo"
+      />
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

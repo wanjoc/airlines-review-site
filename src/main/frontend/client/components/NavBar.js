@@ -1,30 +1,60 @@
-import React from "react";
-import "./NavBar.scss";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
 
-const NavBar = (props) => {
+import "./NavBar.scss"
+
+const NavBar = () => {
+  const [showResponsiveNavBar, setShowResponsiveNavBar] = useState(false)
+
+  let className = "navigation-menu-expanded"
+  const handleClick = () => {
+    debugger
+    setShowResponsiveNavBar(!showResponsiveNavBar)
+  }
+
+  if (showResponsiveNavBar) {
+    className = "navigation-menu-expanded"
+  } else {
+    className = "navigation-menu"
+  }
 
   return (
-    <div className={props.className}>
-      <ul>
-        <li>
-          <a onClick={props.removeNavBarColor} href="#" className="active">
-            Home
-          </a>
-        </li>
-        <li>
-          <a onClick={props.removeNavBarColor} href="#about-us">
-            About Us{" "}
-          </a>
-        </li>
-        <li>
-          <a onClick={props.addNavBarColor} href="#">Airlines</a>
-        </li>
-        <li>
-          <a onClick={props.addNavBarColor} href="#">Add an Airline</a>
-        </li>
-      </ul>
-    </div>
-  );
-};
+    <>
+      <nav className="navbar">
+        <Link to="/" className="logo-link">
+          <p className="flyco-logo">
+            <img
+              id="logo-pic"
+              src="https://airlines-review-images.s3.us-west-2.amazonaws.com/flycoprologoV4.png"
+              alt="flyco pro logo"
+            />
+          </p>
+        </Link>
+        <a onClick={handleClick} className="toggle-button">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </a>
 
-export default NavBar;
+        <ul className={className}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <a href="#about-us">
+              About Us
+            </a>
+          </li>
+          <li>
+            <Link to="/airlines">Airlines</Link>
+          </li>
+          <li>
+            <Link to="/airlines/new">Add an Airline</Link>
+          </li>
+        </ul>
+      </nav>
+    </>
+  )
+}
+
+export default NavBar

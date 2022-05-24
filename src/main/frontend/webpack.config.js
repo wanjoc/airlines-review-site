@@ -16,6 +16,10 @@ var config = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"

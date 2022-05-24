@@ -1,10 +1,13 @@
 nav {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1.875rem 6.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #3eaeee;
+    z-index: 10000;
 }  
 
 nav .flyco-logo {
@@ -41,7 +44,6 @@ nav ul, nav .logo-text {
 
 nav ul li {
     list-style: none;
-    /* margin-left: 1.25rem; */
 }
 
 nav ul li a {
