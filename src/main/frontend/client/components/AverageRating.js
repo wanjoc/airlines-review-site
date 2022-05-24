@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import NumberOfStars from "./NumberOfStars"
 
-const AverageRating = ({ id }) => {
+const AverageRating = ({ airlineId }) => {
   let location = useLocation()
   const [averageRating, setAverageRating] = useState("")
-  const airlineId = id
-
+ 
   const fetchAverageRating = async () => {
     try {
       const response = await fetch(`/api/v1/reviews/average/${airlineId}`)
