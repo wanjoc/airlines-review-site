@@ -57,9 +57,8 @@ const NewAirlineForm = () => {
         }
       }
       setErrors(submitErrors)
-      return _.isEmpty(submitErrors)
     })
-    return true
+    return _.isEmpty(submitErrors)
   }
 
   const handleSubmit = event => {
