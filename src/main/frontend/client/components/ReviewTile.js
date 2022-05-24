@@ -1,8 +1,29 @@
 import React from "react"
 
+import DeleteReviewButton from "./DeleteReviewButton"
 import "./reviewIndex.scss"
 
-const ReviewTile = ({ review: { reviewerName, numberOfStars, comment } }) => {
+const ReviewTile = ({
+  review: { reviewerName, numberOfStars, comment, id }
+}) => {
+  const deleteReview = async () => {
+    try {
+      const response = await fetch(`/api/v1/reviews/${id}`, {
+        method: "DELETE"
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        const responseBody = await response.json()
+        window.location.reload(true)
+      }
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
   return (
     <div className="review-container">
       <div className="cards">
@@ -27,6 +48,7 @@ const ReviewTile = ({ review: { reviewerName, numberOfStars, comment } }) => {
               className="fa fa-instagram"
             ></a>
           </button>
+          <DeleteReviewButton deleteReview={deleteReview} />
         </div>
       </div>
     </div>

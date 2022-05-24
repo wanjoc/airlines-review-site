@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/airlines")
 public class AirlinesApiV1Controller {
+
   private AirlineService airlineService;
 
   @Autowired
@@ -51,25 +52,24 @@ public class AirlinesApiV1Controller {
   }
 
   @PostMapping
-  public ResponseEntity<Map<String, Airline>> createAirline(@RequestBody @Valid Airline airline, BindingResult bindingResult) {
+  public ResponseEntity<Map<String, Airline>> createAirline(@RequestBody @Valid Airline airline,
+      BindingResult bindingResult) {
     try {
       if (bindingResult.hasFieldErrors()) {
         Map<String, String> errorsList = new HashMap<>();
-        for(FieldError fieldError : bindingResult.getFieldErrors()){
+        for (FieldError fieldError : bindingResult.getFieldErrors()) {
           errorsList.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
         Map<String, Map> errors = new HashMap<>();
         errors.put("errors", errorsList);
         return new ResponseEntity(errors, HttpStatus.UNPROCESSABLE_ENTITY);
-      }
-      else {
+      } else {
         Airline newAirline = airlineService.save(airline);
         Map<String, Airline> dataMap = new HashMap<>();
         dataMap.put("airline", newAirline);
         return new ResponseEntity(dataMap, HttpStatus.CREATED);
       }
-    }
-    catch(Exception e) {
+    } catch (Exception e) {
       throw new AirlineNotCreatedException();
     }
   }

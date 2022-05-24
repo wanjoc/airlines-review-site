@@ -44,4 +44,14 @@ public class ReviewDatabaseService implements ReviewService {
 
     return reviewsRepository.save(review);
   }
+
+  @Override
+  public void deleteReview(Review review) {
+    reviewsRepository.delete(review);
+  }
+
+  @Override
+  public Optional<Review> findById(Long id) {
+    return reviewsRepository.findById(id);
+  }
 }
