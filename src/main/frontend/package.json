@@ -9,12 +9,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
     "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.11.0",
+    "@hot-loader/react-dom": "~16.13",
     "@types/jest": "^26.0.9",
     "babel-jest": "^26.2.2",
-    "dotenv": "^8.2.0",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "7.2.0",
@@ -29,17 +30,20 @@
     "nodemon": "^2.0.4",
     "prettier": "^1.17.0",
     "supertest": "^4.0.2",
-    "webpack-dev-server": "~2.4.2",
-    "@hot-loader/react-dom": "~16.13"
+    "webpack-dev-server": "~2.4.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.13.10",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
-    "css-loader": "^2.1.1",
     "cookie-parser": "~1.4.3",
+    "css-loader": "^2.1.1",
     "csvtojson": "^2.0.8",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
@@ -57,11 +61,11 @@
     "pg": "^8.3.0",
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
+    "react-hot-loader": "^4.12.21",
     "react-router-dom": "^5.0.0",
     "sass-loader": "^6.0.2",
     "style-loader": "^0.13.2",
     "webpack": "~2.3.1",
-    "write-file-webpack-plugin": "~4.2.0",
-    "react-hot-loader": "^4.12.21"
+    "write-file-webpack-plugin": "~4.2.0"
   }
 }
