@@ -31,8 +31,9 @@ const AirlinesIndex = () => {
 
   return(
     <>
-      <Link to={"/airlines/new"}>Add a new Airline</Link>
+      <h1>All Airlines</h1>
       {airlineTiles}
+      <Link to={"/airlines/new"}>Add a new Airline</Link>
     </>
   )  
 }
