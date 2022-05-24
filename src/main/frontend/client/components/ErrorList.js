@@ -17,7 +17,7 @@ const ErrorList = props => {
     })
     return (
       <div className="alert">
-        <ul className="error-list">{listItems}</ul>
+        <ul className="error-list"></ul>
         {/* <button className="close-alert" aria-label="Dismiss alert" type="button">
           <span aria-hidden="true">X</span>
         </button> */}
