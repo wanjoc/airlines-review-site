@@ -1,3 +1,4 @@
+DeleteReviewButton
 import React from "react"
 
 const DeleteReviewButton = props => {

@@ -4,11 +4,9 @@ import com.launchacademy.reviews.exceptionHandling.AirlineNotCreatedException;
 import com.launchacademy.reviews.exceptionHandling.AirlineNotFoundException;
 import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.services.AirlineService;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
