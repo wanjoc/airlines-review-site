@@ -20,7 +20,7 @@ const ReviewForm = props => {
 
   const isValid = () => {
     let submitErrors = {}
-    if (newReview.numberOfStars === null) {
+    if (newReview.numberOfStars === "") {
       submitErrors = { ...submitErrors, "Number Of Stars": "Is Blank" }
     } else if (newReview.numberOfStars <= 0 || newReview.numberOfStars > 5) {
       submitErrors = {

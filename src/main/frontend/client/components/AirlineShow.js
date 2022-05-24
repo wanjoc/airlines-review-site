@@ -34,7 +34,6 @@ const AirlineShow = props => {
   }
 
   const keepReviewFormOpen = output => {
-    setShowReviewForm(output)
     window.location.reload()
   }
 
