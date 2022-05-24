@@ -1,8 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
-// @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shrikhand&display=swap');
-
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Inconsolata);
 @include foundation-everything;
+
 // place global css here
 *,
 *::before,
