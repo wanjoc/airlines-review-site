@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #74beeb;
+}
+
 // MOBILIE FIRST
 
 /* CONCAVE EFFECT */
@@ -22,13 +26,13 @@
 
 .airline-form-header {
     position: relative;
-    background: #b3b3b3;
+    background: #e0e2e4;
     height: 90px;
 }
 
 .airline-form-header:before,
 .airline-form-header:after {
-    box-shadow: 0 0 0 15px black;
+    box-shadow: 0 0 0 15px #555657;
     border-radius: 100%;
     position: absolute;
     height: 80px;  /* You can change height to increase or decrease concave radius */ 
@@ -52,8 +56,8 @@
     font-size: 3rem;
     font-weight: 300;
     padding-top: 0.8rem;
+    letter-spacing: 1px;
 }
-
 
 .airline-form {
     position: relative;
@@ -84,15 +88,47 @@
 .airline-form-content {
     position: relative;
     margin: 2rem auto 0;
-    width: 80%;
-    background: lightblue;
-    padding: 2rem;
+    width: 85%;
+    background: #BFE3FB;
+    padding: 3rem 4rem 3rem 6rem;
+    border: 5px solid gray;
+    overflow: hidden;
+}
+
+// Reference: https://blog.logrocket.com/how-to-create-fancy-corners-in-css/
+
+.airline-form-content::after {
+    content: "";
+    position: absolute;
+    margin:-100px;
+    // bottom: 0;
+    // right: 0;
+    top: 0;
+    left: 0;
+    width:200px;
+    height:200px;
+    transform:rotate(-135deg);
+    background-image: linear-gradient(
+        270deg,
+        #0c75bb 0%,
+        #3187c4 19%,
+        #5899ca 40%,
+        #82aed3 66%,
+        #aec5db 79%,
+        #e1e3e5 84%,
+        #d9e1e8 88%,
+        #d4e1ed 91%,
+        #cfe3f2 94%,
+        #c5e2f6 97%,
+        #c1e4fb 100%
+      );
+
 }
 
 label {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.55rem;
 }
 
 input {
@@ -102,6 +138,7 @@ input {
     padding: .25em;
     border: 2px solid #0C74BA;
     width: 80%;
+    font-size: 1.5rem;
 }
 
 input:focus {
@@ -113,12 +150,33 @@ input:focus {
     display: inline-block;
     margin: 1.5rem auto 0;
     padding: 1em 1.5em;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: 'Poppins', 'Arial';
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
-    border: 0;
+    letter-spacing: 1.2px;
+    border: 0.5px solid #555657;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     text-align: center;
+    // background-image: linear-gradient(to left, #54b4ec, #e0e2e4);
+    
+    // color: #555657;
+    // -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: #555657;
+    background-color: #e0e2e4;
+    color: gray;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    transition: transform 250ms;
     cursor: pointer;
+}
+
+.airline-form-submit:hover {
+    transform: scale(1.08);
+    // color: #0C74BA;
+    // -webkit-text-fill-color: #0C74BA; /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 0.5px;
+    color:black;
+    font-size:1.7rem;
 }

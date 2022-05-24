@@ -65,7 +65,7 @@ const NewAirlineForm = () => {
   const handleSubmit = event => {
     event.preventDefault()
     if(validForSubmission()) {
-        addAirline()
+      addAirline()
     }
   }
 
@@ -92,7 +92,7 @@ const NewAirlineForm = () => {
       <ErrorList errors={errors} />
         <div className="airline-form-content">
           <div className="airline-form-field">
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="name">Name</label>
             <input
               name="name"
               id="name"
@@ -102,7 +102,7 @@ const NewAirlineForm = () => {
             />
           </div>
           <div className="airline-form-field">
-            <label htmlFor="description">Description: </label>
+            <label htmlFor="description">Description</label>
             <input
               name="description"
               id="description"
@@ -112,7 +112,7 @@ const NewAirlineForm = () => {
             />
           </div>
           <div className="airline-form-field">
-            <label htmlFor="logoUrl">Logo Url: </label>
+            <label htmlFor="logoUrl">Logo Url</label>
             <input
               name="logoUrl"
               id="logoUrl"
@@ -122,7 +122,7 @@ const NewAirlineForm = () => {
             />
           </div>
           <div className="airline-form-field">
-            <label htmlFor="headquarters">Headquarters: </label>
+            <label htmlFor="headquarters">Headquarters</label>
             <input
               name="headquarters"
               id="headquarters"
@@ -132,7 +132,7 @@ const NewAirlineForm = () => {
             />
           </div>
           <div className="airline-form-field">
-            <label htmlFor="contactNumber">Contact Number: </label>
+            <label htmlFor="contactNumber">Contact Number</label>
             <input
               name="contactNumber"
               id="contactNumber"
@@ -142,7 +142,7 @@ const NewAirlineForm = () => {
             />
           </div>
           <div className="airline-form-field">
-            <label htmlFor="homepageUrl">Homepage Url: </label>
+            <label htmlFor="homepageUrl">Homepage Url</label>
             <input
               name="homepageUrl"
               id="homepageUrl"
