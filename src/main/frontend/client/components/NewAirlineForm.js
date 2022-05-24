@@ -57,9 +57,8 @@ const NewAirlineForm = () => {
         }
       }
       setErrors(submitErrors)
-      return _.isEmpty(submitErrors)
     })
-    return true;
+    return _.isEmpty(submitErrors)
   }
 
   const handleSubmit = event => {
@@ -81,80 +80,84 @@ const NewAirlineForm = () => {
   }
 
   return (
-    <>
-      <Link to={"/airlines"}>Back to airlines</Link>
-      <div className="concave">
-        <div className="airline-form-header">
-          <p className="airline-form-title">Add A New Airline</p>
-        </div>
+    <div className="container">
+      <div className="link-positioning">
+        <Link to={"/airlines"} className="back-to-airlines slide">Back to airlines</Link>
       </div>
-      <form className="airline-form" onSubmit={handleSubmit}>
-      <ErrorList errors={errors} />
-        <div className="airline-form-content">
-          <div className="airline-form-field">
-            <label htmlFor="name">Name</label>
-            <input
-              name="name"
-              id="name"
-              type="text"
-              value={formPayload.name}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="airline-form-field">
-            <label htmlFor="description">Description</label>
-            <input
-              name="description"
-              id="description"
-              type="text"
-              value={formPayload.description}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="airline-form-field">
-            <label htmlFor="logoUrl">Logo Url</label>
-            <input
-              name="logoUrl"
-              id="logoUrl"
-              type="text"
-              value={formPayload.logoUrl}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="airline-form-field">
-            <label htmlFor="headquarters">Headquarters</label>
-            <input
-              name="headquarters"
-              id="headquarters"
-              type="text"
-              value={formPayload.headquarters}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="airline-form-field">
-            <label htmlFor="contactNumber">Contact Number</label>
-            <input
-              name="contactNumber"
-              id="contactNumber"
-              type="text"
-              value={formPayload.contactNumber}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="airline-form-field">
-            <label htmlFor="homepageUrl">Homepage Url</label>
-            <input
-              name="homepageUrl"
-              id="homepageUrl"
-              type="text"
-              value={formPayload.homepageUrl}
-              onChange={handleInputChange}
-            />
+      <div className="airline-form-container">
+        <div className="concave">
+          <div className="airline-form-header">
+            <p className="airline-form-title">Add A New Airline</p>
           </div>
         </div>
-        <input className="airline-form-submit button" type="submit" value="Submit" />
-      </form>
-    </>
+        <form className="airline-form" onSubmit={handleSubmit}>
+        <ErrorList errors={errors} />
+          <div className="airline-form-content">
+            <div className="airline-form-field">
+              <label htmlFor="name">Name</label>
+              <input
+                name="name"
+                id="name"
+                type="text"
+                value={formPayload.name}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="airline-form-field">
+              <label htmlFor="description">Description</label>
+              <input
+                name="description"
+                id="description"
+                type="text"
+                value={formPayload.description}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="airline-form-field">
+              <label htmlFor="logoUrl">Logo Url</label>
+              <input
+                name="logoUrl"
+                id="logoUrl"
+                type="text"
+                value={formPayload.logoUrl}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="airline-form-field">
+              <label htmlFor="headquarters">Headquarters</label>
+              <input
+                name="headquarters"
+                id="headquarters"
+                type="text"
+                value={formPayload.headquarters}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="airline-form-field">
+              <label htmlFor="contactNumber">Contact Number</label>
+              <input
+                name="contactNumber"
+                id="contactNumber"
+                type="text"
+                value={formPayload.contactNumber}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="airline-form-field">
+              <label htmlFor="homepageUrl">Homepage Url</label>
+              <input
+                name="homepageUrl"
+                id="homepageUrl"
+                type="text"
+                value={formPayload.homepageUrl}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <input className="airline-form-submit button" type="submit" value="Submit" />
+        </form>
+      </div> {/* airline-form div */}
+    </div>
   )
 }
 

@@ -1,0 +1,27 @@
+.alert {
+    background-color: aliceblue;
+    border: 2px solid #0C74BA;
+    position: relative;
+    font-size: 1.5rem;
+    font-family: 'Poppins', 'Arial';
+    box-shadow: 10px 5px 5px #197BBD;
+}
+
+.error-list {
+    list-style-type: none;
+    padding: 2rem;
+}
+
+
+// .close-alert {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 50px;
+//     height: 50px;
+//     border: 0;
+//     font-size: 2rem;
+//     font-weight: 700;
+//     background: transparent;
+//     color: #0C74BA;
+// }

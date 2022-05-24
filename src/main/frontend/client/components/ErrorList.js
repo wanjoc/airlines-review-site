@@ -1,6 +1,8 @@
 import React from "react"
 import _ from "lodash"
 
+import "../assets/scss/errorList.scss"
+
 const ErrorList = props => {
   const errantFields = Object.keys(props.errors)
   if (errantFields.length > 0) {
@@ -14,8 +16,11 @@ const ErrorList = props => {
       )
     })
     return (
-      <div className="callout alert">
-        <ul>{listItems}</ul>
+      <div className="alert">
+        <ul className="error-list">{listItems}</ul>
+        {/* <button className="close-alert" aria-label="Dismiss alert" type="button">
+          <span aria-hidden="true">X</span>
+        </button> */}
       </div>
     )
   } else {

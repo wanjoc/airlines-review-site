@@ -12,6 +12,77 @@ body {
 
 // MOBILIE FIRST
 
+.link-positioning {
+    margin-top: 6rem;
+    margin-left: 2rem;
+    border-bottom: 3px solid #0C74BA;
+    padding-bottom: 3px;
+    
+    width: 20%;
+}
+
+.airline-form-container {
+    animation: fadeIn 750ms linear;
+}
+
+@keyframes fadeIn{
+    0% {
+        transform:translateX(-100%); 
+        opacity: 0.1;  
+        }
+    100% { 
+        transform:translateX(0%); 
+        opacity: 1; 
+        }
+}
+
+/* Background Slider Effect; Resource: Tech Memorise: https://www.youtube.com/watch?v=WD41t8L52H8 */
+
+.back-to-airlines {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    -webkit-text-stroke: 0.5px #e0e2e4;
+    font-size: 2rem;
+    font-family: 'Poppins';
+    transition: 400ms ease-in-out;
+    cursor: pointer;
+    // border: 1px red solid;
+    font-weight: 600;
+    margin: auto;
+    
+    overflow: hidden;
+}
+
+.back-to-airlines:hover {
+    color: white;
+}
+
+.back-to-airlines::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #197BBD;
+    transition: 400ms ease-in-out;
+}
+
+.slide::before {
+    left: unset;
+    right: 0;
+    width: 0;
+}
+
+.slide:hover::before {
+    right: unset;
+    left: 0;
+    width: 100%;
+}
+
+
 /* CONCAVE EFFECT */
 /* Resource: https://stackoverflow.com/questions/40738978/how-do-i-create-concave-shaped-borders-around-div-elements */
 
@@ -20,7 +91,7 @@ body {
     overflow: hidden;
     padding: 50px 0;
     width: 80%;
-    margin: 4rem auto 0;
+    margin: 0 auto;
     z-index: 2;
 }
 
@@ -61,7 +132,7 @@ body {
 
 .airline-form {
     position: relative;
-    margin: 4rem auto 0;
+    margin: 1rem auto 0;
     height: 80%;
     width: 80%;
     display: flex;
@@ -70,7 +141,6 @@ body {
     
     font-family: 'Poppins', 'Arial';
     flex-direction: column;
-    margin-bottom: 20rem;
     border: 3px solid #0C74BA;
     padding: 2em;
     box-shadow: 0 0 10px #197BBD;
@@ -82,7 +152,7 @@ body {
 }
 
 .airline-form label {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .airline-form-content {
@@ -101,8 +171,6 @@ body {
     content: "";
     position: absolute;
     margin:-100px;
-    // bottom: 0;
-    // right: 0;
     top: 0;
     left: 0;
     width:200px;
@@ -122,7 +190,6 @@ body {
         #c5e2f6 97%,
         #c1e4fb 100%
       );
-
 }
 
 label {
@@ -158,12 +225,6 @@ input:focus {
     border: 0.5px solid #555657;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     text-align: center;
-    // background-image: linear-gradient(to left, #54b4ec, #e0e2e4);
-    
-    // color: #555657;
-    // -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    // -webkit-text-stroke-width: 1px;
-    // -webkit-text-stroke-color: #555657;
     background-color: #e0e2e4;
     color: gray;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -174,9 +235,33 @@ input:focus {
 
 .airline-form-submit:hover {
     transform: scale(1.08);
-    // color: #0C74BA;
-    // -webkit-text-fill-color: #0C74BA; /* Will override color (regardless of order) */
-    // -webkit-text-stroke-width: 0.5px;
     color:black;
     font-size:1.7rem;
+}
+
+/* =================
+   media queries 
+   ================= */
+
+@media (min-width: 1000px) {
+
+    .airline-form-container {
+        max-width: 65%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    
+    .airline-form label {
+        font-size: 1.75rem;
+    }
+
+    .airline-form input {
+        font-size: 1.25rem;
+    }
+
+    .airline-form-submit:hover {
+        transform: scale(1.08);
+        color:black;
+        font-size:1.25rem;
+    }
 }
