@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 import "./Homepage.scss"
 
-import AboutUs from "./AboutUs"
-
 const Homepage = () => {
   const [offsetY, setOffsetY] = useState(0)
 
@@ -34,10 +32,6 @@ const Homepage = () => {
           alt="clouds"
         />
       </section>
-      {/* <AboutUs id="about-us" /> */}
-      {/* <div id="about-us">
-        <h2><i>''You don't have to be rich to travel well''</i></h2>
-      </div> */}
     </div>
   )
 }
