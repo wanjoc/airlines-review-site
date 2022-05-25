@@ -1,6 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Inconsolata);
 @include foundation-everything;
+
 // place global css here
 *,
 *::before,
@@ -15,10 +17,4 @@
 
 .meal-description {
   font-style: italic;
-}
-
-.color-orange {
-  color: rgb(243, 139, 29);
-  height: 60px;
-  width: 60px;
 }

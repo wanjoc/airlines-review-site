@@ -1,15 +1,18 @@
 import React, { useState } from "react"
 import _ from "lodash"
 
+
 import ErrorList from "./ErrorList"
 
 const ReviewForm = props => {
+  const [rating, setRating] = useState(0)
+  const [hover, setHover] = useState(0)
+  const [errors, setErrors] = useState({})
   const [newReview, setNewReview] = useState({
     reviewerName: "",
     numberOfStars: "",
     comment: ""
   })
-  const [errors, setErrors] = useState({})
 
   const handleChange = e => {
     setNewReview({
@@ -17,10 +20,16 @@ const ReviewForm = props => {
       [e.currentTarget.name]: e.currentTarget.value
     })
   }
-
   const isValid = () => {
     let submitErrors = {}
-    if (newReview.numberOfStars === "") {
+
+    const requiredFields = ["reviewerName"]
+    requiredFields.forEach(field => {
+      if (newReview[field].trim() === "") {
+        newReview[field] = "*****"
+      }
+    })
+    if (newReview.numberOfStars === null) {
       submitErrors = { ...submitErrors, "Number Of Stars": "Is Blank" }
     } else if (newReview.numberOfStars <= 0 || newReview.numberOfStars > 5) {
       submitErrors = {
@@ -28,7 +37,6 @@ const ReviewForm = props => {
         "Number Of Stars": "Rating has to be between 1 and 5"
       }
     }
-
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
   }
@@ -65,48 +73,73 @@ const ReviewForm = props => {
     }
   }
 
+  const updateNumOfStars = () => {
+    setNewReview({
+      ...newReview,
+      numberOfStars: rating
+    })
+  }
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <ErrorList errors={errors} />
-        <label htmlFor="reviewerName">
-          Reviewer Name:
-          <input
-            type="text"
-            name="reviewerName"
-            id="reviewerName"
-            value={newReview.reviewerName}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="numberOfStars">
-          Number of Stars:
-          <input
-            required
-            type="number"
-            step="1"
-            min="1"
-            max="5"
-            name="numberOfStars"
-            id="numberOfStars"
-            value={newReview.numberOfStars}
-            onChange={handleChange}
-          />
-        </label>
-        <label htmlFor="comment">
-          Comment:
-          <textarea
-            name="comment"
-            id="comment"
-            cols="30"
-            rows="10"
-            value={newReview.comment}
-            onChange={handleChange}
-          ></textarea>
-        </label>
-
-        <input type="submit" value="Add Review" />
-      </form>
+      <div className="review-form">
+        <div className="appFormContainer grid-x small-8 large-4">
+          <div className="appFormContainer grid-y">
+            <div className="appForm ">
+              <h1>We appreciate your feedback!</h1>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <ErrorList errors={errors} />
+              <label htmlFor="reviewerName">
+                Your Name:
+                <input
+                  type="text"
+                  name="reviewerName"
+                  id="reviewerName"
+                  value={newReview.reviewerName}
+                  onChange={handleChange}
+                />
+              </label>
+              <label htmlFor="numberOfStars">
+                Your Rating :
+                {[...Array(5)].map((star, index) => {
+                  index += 1
+                  return (
+                    <output
+                      type="button"
+                      name="numberOfStars"
+                      key={index}
+                      className={index <= (hover || rating) ? "on" : "off"}
+                      onClick={() => setRating(index)}
+                      onMouseEnter={() => setHover(index)}
+                      onMouseLeave={() => setHover(rating)}
+                      onChange={handleChange}
+                    >
+                      <span className="star">&#9733;</span>
+                    </output>
+                  )
+                })}
+              </label>
+              <label htmlFor="comment">
+                Comment:
+                <textarea
+                  name="comment"
+                  id="comment"
+                  cols="30"
+                  rows="10"
+                  value={newReview.comment}
+                  onChange={handleChange}
+                ></textarea>
+              </label>
+              <div className="buttons">
+                <button type="submit" onClick={updateNumOfStars}>
+                  Post my Review
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -3,6 +3,8 @@ import { useLocation, Link } from "react-router-dom"
 
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
+import "../assets/scss/foundation/reviewFormStyle.scss"
+import "../assets/scss/foundation/indexStyle.scss"
 
 const AirlineShow = props => {
   let location = useLocation()
@@ -38,29 +40,37 @@ const AirlineShow = props => {
   }
 
   return (
-    <>
-      <h1 className="airline-title">{airline.name}</h1>
-      <button onClick={handleClick}>Add A Review</button>
-      {showReviewForm && <ReviewForm airlineId={airline.id} keepReviewFormOpen={keepReviewFormOpen} />}
-      <p className="airline-description">{airline.description}</p>
-      <img
+    <div className="show-page grid-container">
+      <h1 className="airline-title"><span><img
         className="airline-logoUrl"
         src={airline.logoUrl}
         alt={airline.name}
-      />
-      <p className="airline-headquarters">{airline.headquarters}</p>
-      <p className="airline-contactNumber">{airline.contactNumber}</p>
-      <ReviewList reviews={airline.reviews} />
+      /></span>{airline.name}</h1>
+      <p className="airline-description">{airline.description}</p>
+      
+      <p className="airline-headquarters">Location: {airline.headquarters}</p>
+      <p className="airline-contactNumber">Phone Number: {airline.contactNumber}</p>
       <a
         className="airline-homepageUrl"
         href={airline.homepageUrl}
         target="_blank"
       >
-        {airline.name} Home Page
+      Visit {airline.name} Website
       </a>
       <br />
+      <button className="buttons" onClick={handleClick}>Leave a Review</button>
+      {showReviewForm && (
+        <div className="from">
+          <ReviewForm 
+            airlineId={airline.id}
+            keepReviewFormOpen={keepReviewFormOpen}
+          />
+        </div>
+      )}
+      
+      <ReviewList reviews={airline.reviews} />
       <Link to={"/airlines"}>Back to airlines</Link> |{" "}
-    </>
+    </div>
   )
 }
 

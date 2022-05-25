@@ -1,13 +1,11 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router"
 import NumberOfStars from "./NumberOfStars"
-
 import DeleteReviewButton from "./DeleteReviewButton"
 import "./reviewIndex.scss"
+import "../assets/scss/foundation/reviewIndex.scss"
 
-const ReviewTile = ({
-  review: { reviewerName, numberOfStars, comment, id }
-}) => {
+const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const deleteReview = async () => {
     try {
@@ -32,16 +30,16 @@ const ReviewTile = ({
   }
 
   return (
-    <div>
-      <li>
-        <p>
-          <strong>
-            {reviewerName}
-            <NumberOfStars numberOfStars={numberOfStars} />
-          </strong>
-        </p>
-        <p>{comment}</p>
-      </li>
+    <div className="review-container cell small-12 large-10">
+      <div className="card-top">
+        <p className="name">{reviewerName}</p>
+        <div >
+        <NumberOfStars numberOfStars={numberOfStars} />
+        </div>
+      </div>
+      <div className="comment-card">
+        <p id="comment"> {comment}</p>
+      </div>
       <DeleteReviewButton deleteReview={deleteReview} />
     </div>
   )

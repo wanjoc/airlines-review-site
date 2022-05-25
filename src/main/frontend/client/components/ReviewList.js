@@ -1,6 +1,7 @@
 import React from "react"
 
 import ReviewTile from "./ReviewTile"
+import "../assets/scss/foundation/reviewIndex.scss"
 
 const ReviewList = props => {
   const reviewTiles = props.reviews?.map(review => {
@@ -9,11 +10,11 @@ const ReviewList = props => {
 
   return (
     <div>
-      <h2>Reviews</h2>
-      <div>
-        <ul>{reviewTiles}</ul>
-      </div>
+    <h2>Reviews</h2>
+    <div className="grid-x">
+      {reviewTiles}
     </div>
+  </div>
   )
 }
 
