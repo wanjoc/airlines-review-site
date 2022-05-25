@@ -2,10 +2,12 @@ package com.launchacademy.reviews.controllers;
 
 import com.launchacademy.reviews.exceptionHandling.ReviewNotCreatedException;
 import com.launchacademy.reviews.exceptionHandling.ReviewNotDeletedException;
+import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.models.Review;
 import com.launchacademy.reviews.models.ReviewForm;
 import com.launchacademy.reviews.services.ReviewService;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.swing.text.html.Option;
@@ -32,6 +34,13 @@ public class ReviewsApiV1Controller {
   @Autowired
   public ReviewsApiV1Controller(ReviewService reviewService) {
     this.reviewService = reviewService;
+  }
+
+  @GetMapping("/average/{id}")
+  public ResponseEntity<Map<String, Double>> getAirlineRating(@PathVariable Long id) {
+    Map<String, Double> dataMap = new HashMap<>();
+    dataMap.put("averageRating", reviewService.airlineAverageRating(id));
+    return ResponseEntity.ok(dataMap);
   }
 
   @PostMapping

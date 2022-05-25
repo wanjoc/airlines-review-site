@@ -54,4 +54,9 @@ public class ReviewDatabaseService implements ReviewService {
   public Optional<Review> findById(Long id) {
     return reviewsRepository.findById(id);
   }
+
+  @Override
+  public Double airlineAverageRating(Long id) {
+    return reviewsRepository.airlineAverageRating(id);
+  }
 }
