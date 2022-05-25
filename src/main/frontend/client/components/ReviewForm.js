@@ -86,7 +86,7 @@ const ReviewForm = props => {
         <div className="appFormContainer grid-x small-8 large-4">
           <div className="appFormContainer grid-y">
             <div className="appForm ">
-              <h1>We appreciate your feedback</h1>
+              <h1>We appreciate your feedback!</h1>
             </div>
             <form onSubmit={handleSubmit}>
               <ErrorList errors={errors} />
@@ -133,7 +133,7 @@ const ReviewForm = props => {
               </label>
               <div className="buttons">
                 <button type="submit" onClick={updateNumOfStars}>
-                  Add Review
+                  Post my Review
                 </button>
               </div>
             </form>
