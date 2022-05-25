@@ -46,6 +46,16 @@ public class ReviewDatabaseService implements ReviewService {
   }
 
   @Override
+  public void deleteReview(Review review) {
+    reviewsRepository.delete(review);
+  }
+
+  @Override
+  public Optional<Review> findById(Long id) {
+    return reviewsRepository.findById(id);
+  }
+
+  @Override
   public Double airlineAverageRating(Long id) {
     return reviewsRepository.airlineAverageRating(id);
   }

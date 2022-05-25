@@ -10,7 +10,9 @@ const ReviewList = props => {
   return (
     <div>
       <h2>Reviews</h2>
-      <ul>{reviewTiles}</ul>
+      <div>
+        <ul>{reviewTiles}</ul>
+      </div>
     </div>
   )
 }
