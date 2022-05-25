@@ -19,10 +19,10 @@ const ReviewForm = props => {
       ...newReview,
       [e.currentTarget.name]: e.currentTarget.value
     })
-    console.log(newReview)
   }
   const isValid = () => {
     let submitErrors = {}
+
     const requiredFields = ["reviewerName"]
     requiredFields.forEach(field => {
       if (newReview[field].trim() === "") {

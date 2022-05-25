@@ -1,4 +1,7 @@
-import React, { HTMLComment } from "react"
+
+import React from "react"
+import React from "react"
+import NumberOfStars from "./NumberOfStars"
 
 import "../assets/scss/foundation/reviewIndex.scss"
 const ReviewTile = ({ review: { reviewerName, numberOfStars, comment } }) => {
@@ -6,7 +9,7 @@ const ReviewTile = ({ review: { reviewerName, numberOfStars, comment } }) => {
     <div className="review-container cell small-12 large-10">
       <div className="card-top">
         <p className="name">{reviewerName}</p>
-        <p className="rate">{numberOfStars}</p>
+        <NumberOfStars numberOfStars={numberOfStars} />
       </div>
       <div className="comment-card">
       <p id="comment"> {comment}</p>
