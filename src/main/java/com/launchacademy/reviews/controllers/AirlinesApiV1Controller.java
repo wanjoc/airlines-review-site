@@ -68,6 +68,13 @@ public class AirlinesApiV1Controller {
         return new ResponseEntity(dataMap, HttpStatus.CREATED);
       }
     } catch (Exception e) {
+      if(airlineService.findByName(airline.getName()) != null) {
+        Map<String, String> errorList = new HashMap<>();
+        errorList.put(airline.getName(), "already exists");
+        Map<String, Map> errors = new HashMap<>();
+        errors.put("errors", errorList);
+        return new ResponseEntity(errors, HttpStatus.UNPROCESSABLE_ENTITY);
+      }
       throw new AirlineNotCreatedException();
     }
   }
