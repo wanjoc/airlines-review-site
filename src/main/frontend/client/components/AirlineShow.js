@@ -55,10 +55,10 @@ const AirlineShow = props => {
         href={airline.homepageUrl}
         target="_blank"
       >
-      Visit {airline.name}
+      Visit {airline.name} Website
       </a>
       <br />
-      <button className="buttons" onClick={handleClick}>Write a Review</button>
+      <button className="buttons" onClick={handleClick}>Leave a Review</button>
       {showReviewForm && (
         <div className="from">
           <ReviewForm 
