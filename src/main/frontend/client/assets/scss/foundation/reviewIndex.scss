@@ -26,5 +26,12 @@ body {
 }
 
 #comment {
-  overflow-wrap: anywhere;;
+  overflow-wrap: anywhere;
+  color: black;
+}
+
+.color-orange {
+  color: rgb(241, 154, 61);
+  height: 30px;
+  width: 30px;
 }

@@ -9,6 +9,7 @@ const AirlineTile = ({ airline: { id, name, logoUrl, contactNumber } }) => {
         <h3>{name}</h3>
         <img className="index-logo" src={logoUrl} />
       </Link>
+      <br/>
       <AverageRating airlineId={id} />
       <p> Customer Service: {contactNumber}</p>
     </div>
