@@ -1,6 +1,5 @@
 
 import React from "react"
-import React from "react"
 import NumberOfStars from "./NumberOfStars"
 
 import "../assets/scss/foundation/reviewIndex.scss"
