@@ -10,11 +10,11 @@ const ReviewList = props => {
 
   return (
     <div>
-      <h2>Reviews</h2>
-      <div className="grid-x">
-        {reviewTiles}
-      </div>
+    <h2>Reviews</h2>
+    <div className="grid-x">
+      {reviewTiles}
     </div>
+  </div>
   )
 }
 

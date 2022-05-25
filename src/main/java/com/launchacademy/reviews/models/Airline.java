@@ -14,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.URL;
 
 @NoArgsConstructor
 @Getter
@@ -35,6 +36,7 @@ public class Airline {
   @Column(name="description", nullable = false)
   private String description;
 
+  @URL(regexp = "^https?://.*||null", message = "url must be valid http or https")
   @Column(name="logo_url")
   private String logoUrl;
 
@@ -47,6 +49,7 @@ public class Airline {
   private String contactNumber;
 
   @NotBlank
+  @URL(regexp = "^https?://.*||null", message = "url must be valid http or https")
   @Column(name="homepage_url", nullable = false)
   private String homepageUrl;
 

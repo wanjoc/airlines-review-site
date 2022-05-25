@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Redirect } from "react-router"
 import { Link } from "react-router-dom"
 import _ from "lodash"
+import validator from "validator"
 
 import ErrorList from "./ErrorList"
 
@@ -54,6 +55,14 @@ const NewAirlineForm = () => {
         submitErrors = {
           ...submitErrors,
           [field]: "is blank"
+        }
+      }
+      if ((field === "logoUrl" || field === "homepageUrl") && formPayload[field].trim() !== ""){
+        if (!validator.isURL(formPayload[field])){
+          submitErrors = {
+            ...submitErrors,
+            [field]: "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
+          }
         }
       }
       setErrors(submitErrors)
