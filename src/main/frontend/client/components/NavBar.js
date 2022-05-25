@@ -25,7 +25,7 @@ const NavBar = () => {
           <p className="flyco-logo">
             <img
               id="logo-pic"
-              src="https://airlines-review-images.s3.us-west-2.amazonaws.com/flycoprologoV4.png"
+              src="https://airlines-review-images.s3.us-west-2.amazonaws.com/flycoprologoV5.png"
               alt="flyco pro logo"
             />
           </p>

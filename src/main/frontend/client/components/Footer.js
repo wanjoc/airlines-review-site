@@ -17,11 +17,11 @@ const Footer = () => {
         <div className="col">
           <img
             className="logo"
-            src="https://airlines-review-images.s3.us-west-2.amazonaws.com/flycoprologoV4.png"
+            src="https://airlines-review-images.s3.us-west-2.amazonaws.com/flycoprologoV5.png"
             alt="flyco pro logo"
           />
           <p>
-            Subscribe to Flyco Pro to get the latest updates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima doloribus iure cupiditate at amet accusantium voluptas repudiandae veniam, libero laboriosam sint dignissimos deleniti aperiam sed sapiente corrupti voluptatem blanditiis!
+            Subscribe to Flyco Pro to get the latest updates. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           </p>
         </div>
         <div className="col">

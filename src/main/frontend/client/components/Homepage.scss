@@ -50,8 +50,9 @@ section img {
     pointer-events: none;
 }
 
-section img #clouds {
+#clouds {
     z-index: 10;
+    opacity: 0.8;
     // margin-top: 100px;
 }
 
