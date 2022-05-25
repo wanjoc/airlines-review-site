@@ -982,6 +982,7 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.1.1"
 
+<<<<<<< HEAD
 "@fortawesome/free-brands-svg-icons@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.1.1.tgz#3580961d4f42bd51dc171842402f23a18a5480b1"
@@ -989,6 +990,8 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.1.1"
 
+=======
+>>>>>>> f14dda7547e6f2ec1cb3a43d6dd4128ae3316da6
 "@fortawesome/free-regular-svg-icons@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.1.1.tgz#3f2f58262a839edf0643cbacee7a8a8230061c98"

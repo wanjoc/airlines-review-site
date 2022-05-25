@@ -28,7 +28,7 @@ const Homepage = () => {
         <img
           style={{ transform: `translateX(${offsetY * -0.25}px)` }}
           id="clouds"
-          src="https://airlines-review-images.s3.us-west-2.amazonaws.com/clouds.png"
+          src="https://airlines-review-images.s3.us-west-2.amazonaws.com/%E2%80%94Pngtree%E2%80%94white+cloud+hd+transparent+png_3595697.png"
           alt="clouds"
         />
       </section>

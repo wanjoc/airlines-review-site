@@ -44,4 +44,9 @@ public class ReviewDatabaseService implements ReviewService {
 
     return reviewsRepository.save(review);
   }
+
+  @Override
+  public Double airlineAverageRating(Long id) {
+    return reviewsRepository.airlineAverageRating(id);
+  }
 }
