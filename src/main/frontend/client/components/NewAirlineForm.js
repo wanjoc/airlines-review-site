@@ -65,6 +65,8 @@ const NewAirlineForm = () => {
     event.preventDefault()
     if(validForSubmission()) {
       addAirline()
+    } else {
+      scrollToTop()
     }
   }
 
@@ -72,6 +74,15 @@ const NewAirlineForm = () => {
     setFormPayload({
       ...formPayload,
       [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
+
+  // https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     })
   }
   
