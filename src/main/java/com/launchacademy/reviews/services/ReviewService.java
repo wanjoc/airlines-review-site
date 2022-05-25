@@ -13,7 +13,6 @@ public interface ReviewService {
 
   Review createReview(ReviewForm reviewForm);
 
-
   void deleteReview(Review review);
 
   Optional<Review> findById(Long id);

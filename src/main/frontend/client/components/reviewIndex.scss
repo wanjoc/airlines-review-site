@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins";
   display: flex;
@@ -41,12 +47,6 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
 }
 
 .name {
@@ -142,6 +142,6 @@ h2 {
     #cc2366 75%,
     #bc1888 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1 );
   padding: 0.3rem;
 }

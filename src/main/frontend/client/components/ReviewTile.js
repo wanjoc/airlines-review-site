@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { Redirect } from "react-router"
 
 import DeleteReviewButton from "./DeleteReviewButton"
 import "./reviewIndex.scss"
@@ -6,6 +7,7 @@ import "./reviewIndex.scss"
 const ReviewTile = ({
   review: { reviewerName, numberOfStars, comment, id }
 }) => {
+  const [shouldRedirect, setShouldRedirect] = useState(false)
   const deleteReview = async () => {
     try {
       const response = await fetch(`/api/v1/reviews/${id}`, {
@@ -17,11 +19,15 @@ const ReviewTile = ({
         throw error
       } else {
         const responseBody = await response.json()
-        window.location.reload(true)
+        setShouldRedirect(true)
       }
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
     }
+  }
+
+  if (shouldRedirect) {
+    return <Redirect push to={`/airlines/${id}`} />
   }
 
   return (
@@ -37,7 +43,6 @@ const ReviewTile = ({
           <p>{comment}</p>
         </div>
         <div className="card-action">
-          <span></span>
           <button className="btn">
             <i className="social-links"></i>
             <a href="https://www.facebook.com/" className="fa fa-facebook"></a>
