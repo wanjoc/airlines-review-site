@@ -10,7 +10,7 @@ const ReviewList = props => {
   return (
     <div>
       <h2>Reviews</h2>
-      <div className="input-field">
+      <div>
         <ul>{reviewTiles}</ul>
       </div>
     </div>
