@@ -4,7 +4,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #3eaeee;
+    background: linear-gradient(to top,#41b1f2, #197BBD);
 }  
 
 nav .flyco-logo {
@@ -93,7 +93,6 @@ nav ul li a:hover, .active {
     nav {
         flex-direction: column;
         align-items: flex-start;
-        background: #3eaeee;
     }
 
     nav ul {

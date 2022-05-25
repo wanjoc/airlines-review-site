@@ -41,9 +41,9 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#about-us">
+            <Link to="/airlines/about-us">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/airlines">Airlines</Link>

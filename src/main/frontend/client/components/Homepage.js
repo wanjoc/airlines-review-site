@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
-import "./Homepage.scss";
+import "./Homepage.scss"
 
-import AboutUs from "./AboutUs";
+import AboutUs from "./AboutUs"
 
 const Homepage = () => {
-  const [offsetY, setOffsetY] = useState(0);
+  const [offsetY, setOffsetY] = useState(0)
 
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  const handleScroll = () => setOffsetY(window.pageYOffset)
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <div className="container">
@@ -34,9 +34,12 @@ const Homepage = () => {
           alt="clouds"
         />
       </section>
-      <AboutUs id="about-us" />
+      {/* <AboutUs id="about-us" /> */}
+      {/* <div id="about-us">
+        <h2><i>''You don't have to be rich to travel well''</i></h2>
+      </div> */}
     </div>
-  );
-};
+  )
+}
 
-export default Homepage;
+export default Homepage

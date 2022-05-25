@@ -10,6 +10,7 @@ import AirlinesIndex from "./AirlinesIndex"
 import NewAirlineForm from "./NewAirlineForm.js"
 import AirlineShow from "./AirlineShow"
 import Footer from "./Footer"
+import AboutUs from "./AboutUs"
 
 const App = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/airlines/new" component={NewAirlineForm} />
+          <Route exact path="/airlines/about-us" component={AboutUs} />
           <Route exact path="/airlines" component={AirlinesIndex} />
           <Route exact path="/airlines/:id" component={AirlineShow} />
         </Switch>
