@@ -6,23 +6,33 @@ import "../assets/scss/main.scss"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import "../assets/scss/main.scss"
 
+import Homepage from "./Homepage"
+import NavBar from "./NavBar"
 import AirlinesIndex from "./AirlinesIndex"
+import NewAirlineForm from "./NewAirlineForm.js"
 import AirlineShow from "./AirlineShow"
-import NewAirlineForm from "./NewAirlineForm"
+import Footer from "./Footer"
+import AboutUs from "./AboutUs"
 
 const App = () => {
   useEffect(() => {
     $(document).foundation()
   }, [])
 
-  return (   
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/airlines" component={AirlinesIndex} />
-        <Route exact path="/airlines/new" component={NewAirlineForm} />
-        <Route exact path="/airlines/:id" component={AirlineShow} />
-      </Switch>
-    </BrowserRouter>
+  return (
+    <>
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/airlines/new" component={NewAirlineForm} />
+          <Route exact path="/airlines/about-us" component={AboutUs} />
+          <Route exact path="/airlines" component={AirlinesIndex} />
+          <Route exact path="/airlines/:id" component={AirlineShow} />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </>
   )
 }
 

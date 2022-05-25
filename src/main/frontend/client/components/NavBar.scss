@@ -1,0 +1,111 @@
+nav {
+    width: 100%;
+    padding: 1.875rem 6.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top,#41b1f2, #197BBD);
+}  
+
+nav .flyco-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+nav .logo-text {
+    font-family: 'Coiny', cursive;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-indent: -0.8em;
+}
+
+nav .logo-link {
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul, nav .logo-text {
+    margin-top: 75px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0.375rem 0.938rem;
+    color: #fff;
+    border-radius: 1.25rem;
+    display: block;
+}
+
+nav ul li a:hover, .active {
+    background: #fff;
+    color: #197BBD;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 5.8rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+@media (max-width:810px) {
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navigation-menu {
+        display: none;
+    }
+
+    .navigation-menu-expanded {
+        display: block;
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li a {
+        text-align: center;
+        margin: 0;
+    }
+
+    nav ul li a:hover, .active {
+        background: #fff;
+        color: #197BBD;
+    }
+
+    nav .flyco-logo {
+        margin-left: -50px;
+    }
+}
