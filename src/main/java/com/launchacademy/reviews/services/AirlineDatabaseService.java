@@ -1,9 +1,11 @@
 package com.launchacademy.reviews.services;
 
+import com.launchacademy.reviews.exceptionHandling.AirlineNotDeleted;
 import com.launchacademy.reviews.exceptionHandling.AirlineNotFoundException;
 import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.repositories.AirlinesRepository;
 
+import com.launchacademy.reviews.repositories.ReviewsRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,11 +16,14 @@ import org.springframework.stereotype.Service;
 public class AirlineDatabaseService implements AirlineService {
 
   private AirlinesRepository airlinesRepository;
+  private ReviewsRepository reviewsRepository;
 
   @Autowired
   public AirlineDatabaseService(
-      AirlinesRepository airlinesRepository) {
+      AirlinesRepository airlinesRepository,
+      ReviewsRepository reviewsRepository) {
     this.airlinesRepository = airlinesRepository;
+    this.reviewsRepository = reviewsRepository;
   }
 
   @Override
@@ -45,5 +50,15 @@ public class AirlineDatabaseService implements AirlineService {
   public Airline findByName(String name) {
     return airlinesRepository.findByName(name);
   }
+
+  @Override
+  public void deleteAirline(Airline airline) {
+    try{
+    airlinesRepository.delete(airline);
+    }catch(Exception err){
+      throw new AirlineNotDeleted();
+    }
+  }
+
 
 }

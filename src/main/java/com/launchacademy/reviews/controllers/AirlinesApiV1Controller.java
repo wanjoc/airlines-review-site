@@ -1,18 +1,23 @@
 package com.launchacademy.reviews.controllers;
 
 import com.launchacademy.reviews.exceptionHandling.AirlineNotCreatedException;
+import com.launchacademy.reviews.exceptionHandling.AirlineNotDeleted;
 import com.launchacademy.reviews.exceptionHandling.AirlineNotFoundException;
+import com.launchacademy.reviews.exceptionHandling.ReviewNotDeletedException;
 import com.launchacademy.reviews.models.Airline;
+import com.launchacademy.reviews.models.Review;
 import com.launchacademy.reviews.services.AirlineService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -68,7 +73,7 @@ public class AirlinesApiV1Controller {
         return new ResponseEntity(dataMap, HttpStatus.CREATED);
       }
     } catch (Exception e) {
-      if(airlineService.findByName(airline.getName()) != null) {
+      if (airlineService.findByName(airline.getName()) != null) {
         Map<String, String> errorList = new HashMap<>();
         errorList.put(airline.getName(), "already exists");
         Map<String, Map> errors = new HashMap<>();
@@ -77,5 +82,14 @@ public class AirlinesApiV1Controller {
       }
       throw new AirlineNotCreatedException();
     }
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Map<String, Review>> deleteAirline(@PathVariable Long id) {
+    Airline airline = airlineService.findById(id);
+    System.out.println(airline.getName());
+    Map<String, Review> dataMap = new HashMap<>();
+    airlineService.deleteAirline(airline);
+    return new ResponseEntity<>(dataMap, HttpStatus.ACCEPTED);
   }
 }

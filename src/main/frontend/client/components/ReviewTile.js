@@ -43,7 +43,6 @@ const ReviewTile = ({airlineId,
   }
 
   return (
-    // <div className="review-tile-container cell small-12 large-10">
     <div className="cards cell small-12 large-10">
       <div className="card">
         <div className="card-top">
@@ -72,8 +71,6 @@ const ReviewTile = ({airlineId,
         </div>
       </div>
     </div>
-
-    // </div>
   )
 }
 

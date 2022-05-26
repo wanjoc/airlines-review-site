@@ -2,6 +2,7 @@ package com.launchacademy.reviews.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,7 +54,7 @@ public class Airline {
   @Column(name="homepage_url", nullable = false)
   private String homepageUrl;
 
-  @OneToMany(mappedBy="airline")
+  @OneToMany(mappedBy="airline", cascade = CascadeType.ALL, orphanRemoval = true)
   @JsonIgnoreProperties("airline")
   private List<Review> reviews;
 }
