@@ -6,6 +6,8 @@ import validator from "validator"
 
 import ErrorList from "./ErrorList"
 
+import "./scss/NewAirlineForm.scss"
+
 const NewAirlineForm = () => {
   const [formPayload, setFormPayload] = useState({
     name: "",
@@ -57,11 +59,15 @@ const NewAirlineForm = () => {
           [field]: "is blank"
         }
       }
-      if ((field === "logoUrl" || field === "homepageUrl") && formPayload[field].trim() !== ""){
-        if (!validator.isURL(formPayload[field])){
+      if (
+        (field === "logoUrl" || field === "homepageUrl") &&
+        formPayload[field].trim() !== ""
+      ) {
+        if (!validator.isURL(formPayload[field])) {
           submitErrors = {
             ...submitErrors,
-            [field]: "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
+            [field]:
+              "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
           }
         }
       }
@@ -72,8 +78,8 @@ const NewAirlineForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    if(validForSubmission()) {
-        addAirline()
+    if (validForSubmission()) {
+      addAirline()
     }
   }
 
@@ -83,16 +89,16 @@ const NewAirlineForm = () => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-  
+
   if (shouldRedirect) {
     return <Redirect push to={`/airlines/${id}`} />
   }
 
   return (
     <>
-      <h1>Add A New Airline</h1>
-      <Link to={"/airlines"}>Back to airlines</Link>
+      {/* <Link to={"/airlines"}>Back to airlines</Link> */}
       <form className="airline-form" onSubmit={handleSubmit}>
+        <h1 className="new-airline-title">Add A New Airline</h1>
         <ErrorList errors={errors} />
         <div>
           <label htmlFor="name">Name: </label>
