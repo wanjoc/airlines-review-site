@@ -13,6 +13,7 @@ import NewAirlineForm from "./NewAirlineForm.js"
 import AirlineShow from "./AirlineShow"
 import Footer from "./Footer"
 import AboutUs from "./AboutUs"
+import EditReview from "./EditReview"
 
 const App = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const App = () => {
           <Route exact path="/airlines/about-us" component={AboutUs} />
           <Route exact path="/airlines" component={AirlinesIndex} />
           <Route exact path="/airlines/:id" component={AirlineShow} />
+          <Route exact path="/airlines/edit/:id" component={EditReview} />
         </Switch>
         <Footer />
       </BrowserRouter>

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router"
-import { Link } from "react-router-dom"
 import _ from "lodash"
 import validator from "validator"
 
@@ -120,8 +119,7 @@ const NewAirlineForm = () => {
 
   return (
     <>
-      {/* <Link to={"/airlines"}>Back to airlines</Link> */}
-      <form className="airline-form" onSubmit={handleSubmit}>
+      <form className="airline-form cell small-12 large-10" onSubmit={handleSubmit}>
         <h1 className="new-airline-title">Add A New Airline</h1>
         <ErrorList errors={errors} />
         <div>

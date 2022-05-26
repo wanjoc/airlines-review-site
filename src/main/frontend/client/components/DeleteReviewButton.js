@@ -7,7 +7,7 @@ const DeleteReviewButton = props => {
     e.preventDefault()
     props.deleteReview()
   }
-  return <button className="delete-btn" onClick={handleDelete}>Delete this review</button>
+  return <button className="delete-btn" onClick={handleDelete}>Delete</button>
 }
 
 export default DeleteReviewButton

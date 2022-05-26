@@ -11,8 +11,9 @@ import DeleteReviewButton from "./DeleteReviewButton"
 // import "./scss/reviewIndex.scss"
 
 import "./scss/ReviewTile.scss"
+import EditReviewButton from "./EditReviewButton"
 
-const ReviewTile = ({
+const ReviewTile = ({airlineId,
   review: { reviewerName, numberOfStars, comment, id }
 }) => {
   library.add(fas)
@@ -38,7 +39,7 @@ const ReviewTile = ({
   }
 
   if (shouldRedirect) {
-    return <Redirect push to={`/airlines/${id}`} />
+    return <Redirect push to={`/airlines/${airlineId}`} />
   }
 
   return (
@@ -47,7 +48,7 @@ const ReviewTile = ({
       <div className="card">
         <div className="card-top">
           <div className="name">
-            <div class="reviewer-image one" alt="">
+            <div className="reviewer-image one" alt="">
               {reviewerName[0].toUpperCase()}
             </div>
             <p>{reviewerName}</p>
@@ -63,6 +64,7 @@ const ReviewTile = ({
         </div>
         <div className="card-action">
           <DeleteReviewButton deleteReview={deleteReview} />
+          <EditReviewButton id={id} />
           <button className="btn">
             <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
             Share

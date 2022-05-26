@@ -5,9 +5,8 @@ import ReviewTile from "./ReviewTile"
 import "./scss/ReviewList.scss"
 
 const ReviewList = props => {
-
   const reviewTiles = props.reviews?.map(review => {
-    return <ReviewTile key={review.id} review={review} />
+    return <ReviewTile airlineId={props.airlineId} fetchAirline={props.fetchAirline} key={review.id} review={review} />
   })
 
   return (
@@ -24,7 +23,7 @@ const ReviewList = props => {
           <span>features</span>
           <span>values</span>
         </div>
-        {reviewTiles}
+        <div className="review-tiles">{reviewTiles}</div>
       </div>
     </div>
   )

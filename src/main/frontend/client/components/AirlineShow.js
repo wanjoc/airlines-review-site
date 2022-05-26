@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useLocation, Link } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
@@ -10,6 +10,8 @@ const AirlineShow = props => {
   let location = useLocation()
   const [airline, setAirline] = useState({ reviews: [] })
   const [showReviewForm, setShowReviewForm] = useState(false)
+  const [shouldUpdate, setUpdate] = useState(false)
+
   const airlineId = props.match.params.id
 
   const fetchAirline = async () => {
@@ -77,8 +79,7 @@ const AirlineShow = props => {
         </div>
       )}
 
-      <ReviewList reviews={airline.reviews} />
-      <Link to={"/airlines"}>Back to airlines</Link>
+      <ReviewList airlineId={airlineId} reviews={airline.reviews} fetchAirline={fetchAirline} />
     </div>
   )
 }

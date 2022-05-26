@@ -19,4 +19,6 @@ public interface ReviewService {
   Optional<Review> findById(Long id);
   
   Double airlineAverageRating(Long airlineId);
+
+  Review updateReview(Long id, ReviewForm reviewForm);
 }
