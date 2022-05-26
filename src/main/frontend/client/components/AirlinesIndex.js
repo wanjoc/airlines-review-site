@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 
+import "./scss/AirlineIndex.scss"
 import AirlineTile from "./AirlineTile"
 
 const AirlinesIndex = () => {
@@ -29,7 +30,7 @@ const AirlinesIndex = () => {
   })
 
   return(
-    <div className=" airline-tile">
+    <div className="airline-index-container">
       <h5 className="quote">"It's the old adage: You can make a pizza so cheap, nobody will eat it. You can make an airline so cheap, nobody will fly it."</h5>
       <p className="quote-author">Gordon Bethune</p>
       <div className="grid-x">

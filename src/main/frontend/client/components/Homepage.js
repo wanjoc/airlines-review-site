@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-import "./Homepage.scss"
+import "./scss/Homepage.scss"
 
 const Homepage = () => {
   const [offsetY, setOffsetY] = useState(0)

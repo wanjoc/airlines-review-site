@@ -3,8 +3,8 @@ import { useLocation, Link } from "react-router-dom"
 
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
-import "../assets/scss/foundation/reviewFormStyle.scss"
-import "../assets/scss/foundation/indexStyle.scss"
+// import "../assets/scss/foundation/reviewFormStyle.scss"
+// import "../assets/scss/foundation/indexStyle.scss"
 
 const AirlineShow = props => {
   let location = useLocation()

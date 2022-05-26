@@ -1,76 +1,76 @@
-* {
-  padding: 0;
-  box-sizing: border-box;
- }
+// // * {
+// //   padding: 0;
+// //   box-sizing: border-box;
+// //  }
 
-body {
-  	padding: 3rem;
-  	font-size: 1.125rem;
-  	line-height: 1.5;
-  	transition: all 725ms ease-in-out;
-  	 font-family: 'Poppins', sans-serif;
-  }
-  .airline-tile {
-    padding-bottom: 1rem;
-    align-items: center;
-    text-align: center;
-    margin: 2rem auto 2rem auto;
-    box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
-    padding: 1rem 3rem;
-  }
+// // body {
+// //   	padding: 3rem;
+// //   	font-size: 1.125rem;
+// //   	line-height: 1.5;
+// //   	transition: all 725ms ease-in-out;
+// //   	 font-family: 'Poppins', sans-serif;
+// //   }
+//   .airline-tile {
+//     padding-bottom: 1rem;
+//     align-items: center;
+//     text-align: center;
+//     margin: 2rem auto 2rem auto;
+//     box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+//     padding: 1rem 3rem;
+//   }
 
-.quote {
-  text-align: center;
-  font-style: italic;
-}
+// .quote {
+//   text-align: center;
+//   font-style: italic;
+// }
 
-.quote-author {
-  color: red;
-  font-style: italic;
-}
+// .quote-author {
+//   color: red;
+//   font-style: italic;
+// }
 
-/* visited link */
+// /* visited link */
 
 
-/* mouse over link */
-a:hover {
-  text-decoration:none
-}
+// /* mouse over link */
+// a:hover {
+//   text-decoration:none
+// }
 
-/* selected link */
-a:active {
-  text-decoration:none
-}
+// /* selected link */
+// a:active {
+//   text-decoration:none
+// }
 
-h1 {
-	font-size: 2rem;
-	font-weight: bolder;
-	margin-bottom: 1rem;
-	text-decoration:none
-}
-a {
-  color: rgb(0, 187, 255); 
-}
+// h1 {
+// 	font-size: 2rem;
+// 	font-weight: bolder;
+// 	margin-bottom: 1rem;
+// 	text-decoration:none
+// }
+// a {
+//   color: rgb(0, 187, 255); 
+// }
 
-ul.ba {
-    list-style-type: none;
-}
+// ul.ba {
+//     list-style-type: none;
+// }
 
-.index-logo {
- width: 15rem;
-}
+// .index-logo {
+//  width: 15rem;
+// }
 
-li {
-  padding: 10px;
-  overflow: auto;
-  position: relative;
-}
+// li {
+//   padding: 10px;
+//   overflow: auto;
+//   position: relative;
+// }
 
-li:hover {
-  background: #eee;
-  cursor: pointer;
-}
+// li:hover {
+//   background: #eee;
+//   cursor: pointer;
+// }
 
-div {
-  margin: 20px;
-}
+// // div {
+// //   margin: 20px;
+// // }

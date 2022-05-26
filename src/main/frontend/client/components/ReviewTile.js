@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Redirect } from "react-router"
 import NumberOfStars from "./NumberOfStars"
 import DeleteReviewButton from "./DeleteReviewButton"
-import "./reviewIndex.scss"
-import "../assets/scss/foundation/reviewIndex.scss"
+// import "./reviewIndex.scss"
+// import "./scss/reviewIndex.scss"
 
 const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) => {
   const [shouldRedirect, setShouldRedirect] = useState(false)

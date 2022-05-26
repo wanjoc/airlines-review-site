@@ -6,7 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
-import "./Footer.scss"
+import "./scss/Footer.scss"
 
 const Footer = () => {
   library.add(fas, far, fab)
@@ -61,7 +61,7 @@ const Footer = () => {
           <form>
             <FontAwesomeIcon icon="fa-regular fa-envelope" />
             <input className="email-form" type="email" placeholder="Enter your email" required />
-            <button>
+            <button className="arrow-button">
               <FontAwesomeIcon className="fas" icon="fa-solid fa-arrow-right" />
             </button>
           </form>
