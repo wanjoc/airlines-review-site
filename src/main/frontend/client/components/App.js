@@ -14,6 +14,7 @@ import AirlineShow from "./AirlineShow"
 import Footer from "./Footer"
 import AboutUs from "./AboutUs"
 import EditReview from "./EditReview"
+import ReviewShowPage from "./ReviewShowPage"
 
 const App = () => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const App = () => {
           <Route exact path="/airlines" component={AirlinesIndex} />
           <Route exact path="/airlines/:id" component={AirlineShow} />
           <Route exact path="/airlines/edit/:id" component={EditReview} />
+          <Route exact path="/airlines/reviews/:id" component={ReviewShowPage} />
         </Switch>
         <Footer />
       </BrowserRouter>

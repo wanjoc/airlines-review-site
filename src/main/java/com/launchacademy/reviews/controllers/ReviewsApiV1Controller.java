@@ -82,6 +82,7 @@ public class ReviewsApiV1Controller {
 
   @GetMapping("/{id}")
   public ResponseEntity<Map<String, Review>> getReview(@PathVariable Long id) {
+    System.out.println(id);
     Optional<Review> review = reviewService.findById(id);
     Map<String, Review> dataMap = new HashMap<>();
     if (review.isPresent()) {

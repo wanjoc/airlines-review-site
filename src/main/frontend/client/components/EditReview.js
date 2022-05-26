@@ -9,6 +9,7 @@ const EditReview = props => {
   const [errors, setErrors] = useState({})
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const [review, setReview] = useState({
+    id: "",
     reviewerName: "",
     numberOfStars: "",
     comment: "",
@@ -68,8 +69,6 @@ const EditReview = props => {
   }
 
   const editReview = async () => {
-      console.log(review)
-      debugger
     try {
       const response = await fetch(`/api/v1/reviews/${reviewId}`, {
         method: "PUT",
@@ -90,7 +89,7 @@ const EditReview = props => {
   }
 
   if (shouldRedirect) {
-    return <Redirect push to={`/airlines/${review.airline.id}`} />
+    return <Redirect push to={`/airlines/reviews/${review.id}`} />
   }
 
   const handleSubmit = event => {

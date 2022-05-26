@@ -10,7 +10,6 @@ const AirlineShow = props => {
   let location = useLocation()
   const [airline, setAirline] = useState({ reviews: [] })
   const [showReviewForm, setShowReviewForm] = useState(false)
-  const [shouldUpdate, setUpdate] = useState(false)
 
   const airlineId = props.match.params.id
 
@@ -79,7 +78,7 @@ const AirlineShow = props => {
         </div>
       )}
 
-      <ReviewList airlineId={airlineId} reviews={airline.reviews} fetchAirline={fetchAirline} />
+      <ReviewList reviews={airline.reviews}/>
     </div>
   )
 }
