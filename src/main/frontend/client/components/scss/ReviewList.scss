@@ -7,8 +7,12 @@
     padding: 2.5rem;
 }
 
-.title{
+.title {
+    color: #1e9fd2;
+    font-size: 25px;
+    margin-top: 3rem;
     margin-bottom: 3rem;
+    // margin-left: 3rem;
 }
 
 .input-field {
@@ -22,7 +26,7 @@
 .input-field input {
     border: none;
     background: transparent;
-    outline:#8C8C9F;
+    outline: #8C8C9F;
     color: #8C8C9F;
     width: calc(100% - 3.2rem);
 }
