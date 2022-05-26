@@ -6,6 +6,10 @@
 
 .show-page {
     box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+    margin: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .airline-logoUrl {
@@ -13,5 +17,8 @@
 }
 
 .airline-title {
-    color: rgb(30, 159, 210);
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    color: #1e9fd2;
 }
