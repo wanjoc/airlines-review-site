@@ -1,41 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-
-// // body {
-// //   font-family: "Poppins";
-// //   display: flex;
-// //   justify-content: center;
-// // }
-
-*{
-    font-family: "Poppins";
-}
-
-.review-container {
-    background-color: #f0f0d6;
+.reviews-container {
+    // background-color: #41b1f2;
+    background-color: rgba(255, 255, 255, 0.5);
     width: 75%;
     margin: 1rem auto 1rem auto;
-    box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+    // box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
 }
 
-.card-top {
-    width: 90%;
-    background-color: rgb(189, 196, 150);
+.title{
+    margin-bottom: 3rem;
+}
+
+.input-field {
+    background: transparent;
+    width: 100%;
+    border: 1px solid transparent;
+    padding: .85rem;
+    border-radius: 5px;
+}
+
+.input-field input {
+    border: none;
+    background: transparent;
+    outline:#8C8C9F;
+    color: #8C8C9F;
+    width: calc(100% - 3.2rem);
+}
+
+.input-field .fas,
+.input-field input::placeholder {
+    color: #000;
+}
+
+.suggest {
+    margin-top: 1.5rem;
     display: flex;
-    justify-content: justify-content;
-    padding: 0 1rem 0 1rem;
-    color: black;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    box-shadow: 0px 1px 2px black, 0 0 1px blue, 0 0 1px darkblue;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#comment {
-    overflow-wrap: anywhere;
-    color: black;
+.suggest span {
+    background: #41b1f2;
+    padding: .65rem 1.3rem;
+    border-radius: 5px;
+    font-size: .65rem;
+    color: #000;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 
-.color-orange {
-    color: rgb(241, 154, 61);
-    height: 30px;
-    width: 30px;
+.suggest span:hover,
+.suggest span:active {
+    background: #fff;
+    color: #41b1f2;
 }

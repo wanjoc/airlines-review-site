@@ -1,12 +1,24 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
 import NumberOfStars from "./NumberOfStars"
 import DeleteReviewButton from "./DeleteReviewButton"
 // import "./reviewIndex.scss"
 // import "./scss/reviewIndex.scss"
 
-const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) => {
+import "./scss/ReviewTile.scss"
+
+const ReviewTile = ({
+  review: { reviewerName, numberOfStars, comment, id }
+}) => {
+  library.add(fas)
+
   const [shouldRedirect, setShouldRedirect] = useState(false)
+
   const deleteReview = async () => {
     try {
       const response = await fetch(`/api/v1/reviews/${id}`, {
@@ -30,18 +42,36 @@ const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) =>
   }
 
   return (
-    <div className="review-container cell small-12 large-10">
-      <div className="card-top">
-        <p className="name">{reviewerName}</p>
-        <div >
-        <NumberOfStars numberOfStars={numberOfStars} />
+    // <div className="review-tile-container cell small-12 large-10">
+    <div className="cards cell small-12 large-10">
+      <div className="card">
+        <div className="card-top">
+          <div className="name">
+            <div class="reviewer-image one" alt="">
+              {reviewerName[0].toUpperCase()}
+            </div>
+            <p>{reviewerName}</p>
+          </div>
+
+          <div>
+            <NumberOfStars numberOfStars={numberOfStars} />
+          </div>
+        </div>
+
+        <div className="comment-card">
+          <p id="comment"> {comment}</p>
+        </div>
+        <div className="card-action">
+          <DeleteReviewButton deleteReview={deleteReview} />
+          <button className="btn">
+            <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
+            Share
+          </button>
         </div>
       </div>
-      <div className="comment-card">
-        <p id="comment"> {comment}</p>
-      </div>
-      <DeleteReviewButton deleteReview={deleteReview} />
     </div>
+
+    // </div>
   )
 }
 
