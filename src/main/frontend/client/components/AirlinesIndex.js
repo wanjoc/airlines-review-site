@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 
-import "./scss/AirlineIndex.scss"
 import AirlineTile from "./AirlineTile"
+
+import "./scss/AirlineIndex.scss"
 
 const AirlinesIndex = () => {
   const [airlines, setAirlines] = useState([])

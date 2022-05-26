@@ -1,7 +1,8 @@
 import React from "react"
 
 import ReviewTile from "./ReviewTile"
-// import "./scss/reviewIndex.scss"
+
+import "./scss/ReviewList.scss"
 
 const ReviewList = props => {
   const reviewTiles = props.reviews?.map(review => {

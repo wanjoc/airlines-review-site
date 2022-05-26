@@ -3,8 +3,6 @@ import { useLocation, Link } from "react-router-dom"
 
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
-// import "../assets/scss/foundation/reviewFormStyle.scss"
-// import "../assets/scss/foundation/indexStyle.scss"
 
 import "./scss/AirlineShow.scss"
 
@@ -43,35 +41,44 @@ const AirlineShow = props => {
 
   return (
     <div className="show-page grid-container">
-      <h1 className="airline-title"><span><img
-        className="airline-logoUrl"
-        src={airline.logoUrl}
-        alt={airline.name}
-      /></span>{airline.name}</h1>
+      <h1 className="airline-title">
+        <span>
+          <img
+            className="airline-logoUrl"
+            src={airline.logoUrl}
+            alt={airline.name}
+          />
+        </span>
+        {airline.name}
+      </h1>
       <p className="airline-description">{airline.description}</p>
-      
+
       <p className="airline-headquarters">Location: {airline.headquarters}</p>
-      <p className="airline-contactNumber">Phone Number: {airline.contactNumber}</p>
+      <p className="airline-contactNumber">
+        Phone Number: {airline.contactNumber}
+      </p>
       <a
         className="airline-homepageUrl"
         href={airline.homepageUrl}
         target="_blank"
       >
-      Visit {airline.name} Website
+        Visit {airline.name} Website
       </a>
       <br />
-      <button className="buttons" onClick={handleClick}>Leave a Review</button>
+      <button className="leave-review-button" onClick={handleClick}>
+        Leave a Review
+      </button>
       {showReviewForm && (
         <div className="from">
-          <ReviewForm 
+          <ReviewForm
             airlineId={airline.id}
             keepReviewFormOpen={keepReviewFormOpen}
           />
         </div>
       )}
-      
+
       <ReviewList reviews={airline.reviews} />
-      <Link to={"/airlines"}>Back to airlines</Link> |{" "}
+      <Link to={"/airlines"}>Back to airlines</Link>
     </div>
   )
 }
