@@ -49,6 +49,15 @@ const NewAirlineForm = () => {
     }
   }
 
+  const validatePhoneNumber = phoneNumber => {
+    let isValid = false
+    let pattern = new RegExp(/^[0-9\b]+$/)
+    if (pattern.test(phoneNumber)) {
+      isValid = true
+    }
+    return isValid
+  }
+
   const validForSubmission = () => {
     let submitErrors = {}
     const requiredFields = Object.keys(formPayload)
@@ -68,6 +77,21 @@ const NewAirlineForm = () => {
             ...submitErrors,
             [field]:
               "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
+          }
+        }
+      }
+      if (field === "contactNumber" && formPayload[field].trim() !== ""){
+        if (!validatePhoneNumber(formPayload[field])){
+          submitErrors = {
+            ...submitErrors,
+            [field]:
+              "is not a valid phone number.Invalid characters detected"
+          }
+        } else if (formPayload[field].length !== 10){
+          submitErrors = {
+            ...submitErrors,
+            [field]:
+              "is not a valid phone number."
           }
         }
       }
