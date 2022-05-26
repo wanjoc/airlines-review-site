@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className="col">
           <h3>Newsletter <div className="underline"><span></span></div></h3>
-          <form>
+          <form className="newsletter-form">
             <FontAwesomeIcon icon="fa-regular fa-envelope" />
             <input className="email-form" type="email" placeholder="Enter your email" required />
             <button className="arrow-button">
