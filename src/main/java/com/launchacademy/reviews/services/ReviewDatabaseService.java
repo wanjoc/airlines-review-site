@@ -1,5 +1,6 @@
 package com.launchacademy.reviews.services;
 
+import com.launchacademy.reviews.exceptionHandling.ReviewNotFoundException;
 import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.models.Review;
 import com.launchacademy.reviews.models.ReviewForm;
@@ -58,5 +59,19 @@ public class ReviewDatabaseService implements ReviewService {
   @Override
   public Double airlineAverageRating(Long id) {
     return reviewsRepository.airlineAverageRating(id);
+  }
+
+  @Override
+  public Review updateReview(Long id, ReviewForm reviewForm) {
+      Optional<Review> review = reviewsRepository.findById(id);
+      if (review.isPresent()) {
+        Review dbReview = review.get();
+        dbReview.setReviewerName(reviewForm.getReviewerName());
+        dbReview.setNumberOfStars(reviewForm.getNumberOfStars());
+        dbReview.setComment(reviewForm.getComment());
+        return reviewsRepository.save(dbReview);
+      }else{
+        throw new ReviewNotFoundException();
+      }
   }
 }

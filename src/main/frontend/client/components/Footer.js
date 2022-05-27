@@ -6,7 +6,8 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
-import "./Footer.scss"
+
+import "../assets/scss/styling/Footer.scss"
 
 const Footer = () => {
   library.add(fas, far, fab)
@@ -21,18 +22,18 @@ const Footer = () => {
             alt="flyco pro logo"
           />
           <p>
-            Subscribe to Flyco Pro to get the latest updates. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Subscribe to Flyco Pro to get the latest updates.
           </p>
         </div>
         <div className="col">
-          <h3>Headquarters <div className="underline"><span></span></div></h3>
+          <h3 id="headquarters">Headquarters <div className="underline"><span></span></div></h3>
           <p>Wonderland Road</p>
           <p>Chicago, Illinois 60661</p>
           <p className="email-id">flycopro@fly.com</p>
           <h4>123-456-7890</h4>
         </div>
         <div className="col">
-          <h3>Links <div className="underline"><span></span></div></h3>
+          <h3 id="links">Links <div className="underline"><span></span></div></h3>
           <ul>
             <li>
               <Link className="links" to="/">
@@ -57,11 +58,11 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col">
-          <h3>Newsletter <div className="underline"><span></span></div></h3>
-          <form>
+          <h3 id="newsletter">Newsletter <div className="underline"><span></span></div></h3>
+          <form className="newsletter-form">
             <FontAwesomeIcon icon="fa-regular fa-envelope" />
             <input className="email-form" type="email" placeholder="Enter your email" required />
-            <button>
+            <button className="arrow-button">
               <FontAwesomeIcon className="fas" icon="fa-solid fa-arrow-right" />
             </button>
           </form>

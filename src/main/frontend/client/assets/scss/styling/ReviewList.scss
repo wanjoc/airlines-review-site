@@ -1,0 +1,63 @@
+.reviews-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 75%;
+    margin: 1rem auto 1rem auto;
+    padding: 2.5rem;
+}
+
+.review-tiles{
+    width: 60%;
+}
+
+.title {
+    color: #1e9fd2;
+    font-size: 25px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.input-field {
+    background: transparent;
+    width: 100%;
+    border: 1px solid transparent;
+    padding: .85rem;
+    border-radius: 5px;
+}
+
+.input-field input {
+    border: none;
+    background: transparent;
+    outline: #8C8C9F;
+    color: #8C8C9F;
+    width: calc(100% - 3.2rem);
+}
+
+.input-field .fas,
+.input-field input::placeholder {
+    color: #000;
+}
+
+.suggest {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.suggest span {
+    background: #41b1f2;
+    padding: .65rem 1.3rem;
+    border-radius: 5px;
+    font-size: .65rem;
+    color: #000;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.suggest span:hover,
+.suggest span:active {
+    background: #fff;
+    color: #41b1f2;
+}

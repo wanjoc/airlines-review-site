@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import _ from "lodash"
 
-
 import ErrorList from "./ErrorList"
+
+import "../assets/scss/styling/ReviewForm.scss"
 
 const ReviewForm = props => {
   const [rating, setRating] = useState(0)

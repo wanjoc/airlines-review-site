@@ -12,4 +12,6 @@ public interface AirlineService {
   Airline findById(Long id);
 
   Airline findByName(String name);
+
+  void deleteAirline(Airline airline);
 }

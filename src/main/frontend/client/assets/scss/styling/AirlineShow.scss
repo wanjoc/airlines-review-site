@@ -1,0 +1,45 @@
+* {
+    font-size: 1.125rem;
+}
+
+.show-page {
+    margin: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+
+}
+
+.airline-logoUrl {
+    height: 12.5rem;
+}
+
+.airline-title {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    color: #1e9fd2;
+}
+
+.airline-description {
+    margin-bottom: 1rem;
+    font-size: inherit;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+.airline-homepageUrl {
+    color: #00bbff;
+}
+
+.leave-review-button {
+    background-color: #161bb5;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}

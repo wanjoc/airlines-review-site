@@ -1,12 +1,24 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
 import NumberOfStars from "./NumberOfStars"
 import DeleteReviewButton from "./DeleteReviewButton"
-import "./reviewIndex.scss"
-import "../assets/scss/foundation/reviewIndex.scss"
+import EditReviewButton from "./EditReviewButton"
 
-const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) => {
+import "../assets/scss/styling/ReviewTile.scss"
+
+const ReviewTile = ({
+  airlineId,
+  review: { reviewerName, numberOfStars, comment, id }
+}) => {
+  library.add(fas)
+
   const [shouldRedirect, setShouldRedirect] = useState(false)
+
   const deleteReview = async () => {
     try {
       const response = await fetch(`/api/v1/reviews/${id}`, {
@@ -26,21 +38,39 @@ const ReviewTile = ({ review: { reviewerName, numberOfStars, comment, id } }) =>
   }
 
   if (shouldRedirect) {
-    return <Redirect push to={`/airlines/${id}`} />
+    return <Redirect push to={`/airlines/${airlineId}`} />
   }
 
   return (
-    <div className="review-container cell small-12 large-10">
-      <div className="card-top">
-        <p className="name">{reviewerName}</p>
-        <div >
-        <NumberOfStars numberOfStars={numberOfStars} />
+    <div className="cards cell small-12 large-10">
+      <div className="card">
+        <div className="card-top">
+          <div className="name">
+            <div className="reviewer-image one" alt="">
+              {reviewerName[0].toUpperCase()}
+            </div>
+            <p>{reviewerName}</p>
+          </div>
+
+          <div>
+            <NumberOfStars numberOfStars={numberOfStars} />
+          </div>
+        </div>
+
+        <div className="comment-card">
+          <p id="comment"> {comment}</p>
+        </div>
+        <div className="card-action">
+          <div className="delete-edit-btns">
+            <DeleteReviewButton deleteReview={deleteReview} />
+            <EditReviewButton id={id} />
+          </div>
+          <button className="btn">
+            <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
+            Share
+          </button>
         </div>
       </div>
-      <div className="comment-card">
-        <p id="comment"> {comment}</p>
-      </div>
-      <DeleteReviewButton deleteReview={deleteReview} />
     </div>
   )
 }

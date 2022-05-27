@@ -21,6 +21,10 @@ footer {
     line-height: 20px;
 }
 
+#headquarters, #newsletter, #links{
+    font-size: 1.3rem;
+}
+
 .row{
     width: 85%;
     margin: auto;
@@ -66,7 +70,7 @@ ul li{
     text-decoration: none;
 }
 
-form {
+.newsletter-form form {
     padding-bottom: 15px;
     display: flex;
     align-items: center;
@@ -94,7 +98,7 @@ form .email-form{
     opacity: 1; 
   }
 
-form button{
+.arrow-button{
     background: transparent;
     border: 0;
     outline: none;

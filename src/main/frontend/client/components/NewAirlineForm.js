@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import { Redirect } from "react-router"
-import { Link } from "react-router-dom"
 import _ from "lodash"
 import validator from "validator"
 
 import ErrorList from "./ErrorList"
+
+import "../assets/scss/styling/NewAirlineForm.scss"
 
 const NewAirlineForm = () => {
   const [formPayload, setFormPayload] = useState({
@@ -47,6 +48,15 @@ const NewAirlineForm = () => {
     }
   }
 
+  const validatePhoneNumber = phoneNumber => {
+    let isValid = false
+    let pattern = new RegExp(/^[0-9\b]+$/)
+    if (pattern.test(phoneNumber)) {
+      isValid = true
+    }
+    return isValid
+  }
+
   const validForSubmission = () => {
     let submitErrors = {}
     const requiredFields = Object.keys(formPayload)
@@ -57,11 +67,30 @@ const NewAirlineForm = () => {
           [field]: "is blank"
         }
       }
-      if ((field === "logoUrl" || field === "homepageUrl") && formPayload[field].trim() !== ""){
-        if (!validator.isURL(formPayload[field])){
+      if (
+        (field === "logoUrl" || field === "homepageUrl") &&
+        formPayload[field].trim() !== ""
+      ) {
+        if (!validator.isURL(formPayload[field])) {
           submitErrors = {
             ...submitErrors,
-            [field]: "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
+            [field]:
+              "is not a valid URL. (e.g., http://www.<url> or https://www.<url>)"
+          }
+        }
+      }
+      if (field === "contactNumber" && formPayload[field].trim() !== ""){
+        if (!validatePhoneNumber(formPayload[field])){
+          submitErrors = {
+            ...submitErrors,
+            [field]:
+              "is not a valid phone number.Invalid characters detected"
+          }
+        } else if (formPayload[field].length !== 10){
+          submitErrors = {
+            ...submitErrors,
+            [field]:
+              "is not a valid phone number."
           }
         }
       }
@@ -72,8 +101,8 @@ const NewAirlineForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    if(validForSubmission()) {
-        addAirline()
+    if (validForSubmission()) {
+      addAirline()
     }
   }
 
@@ -83,16 +112,15 @@ const NewAirlineForm = () => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-  
+
   if (shouldRedirect) {
     return <Redirect push to={`/airlines/${id}`} />
   }
 
   return (
     <>
-      <h1>Add A New Airline</h1>
-      <Link to={"/airlines"}>Back to airlines</Link>
-      <form className="airline-form" onSubmit={handleSubmit}>
+      <form className="airline-form cell small-12 large-10" onSubmit={handleSubmit}>
+        <h1 className="new-airline-title">Add A New Airline</h1>
         <ErrorList errors={errors} />
         <div>
           <label htmlFor="name">Name: </label>
