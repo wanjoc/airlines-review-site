@@ -23,6 +23,7 @@ import org.hibernate.validator.constraints.URL;
 @Entity
 @Table(name="airlines")
 public class Airline {
+
   @Id
   @SequenceGenerator(name = "airline_generator", sequenceName = "airlines_id_seq", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "airline_generator")

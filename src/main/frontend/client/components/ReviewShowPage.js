@@ -7,13 +7,15 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 
 import NumberOfStars from "./NumberOfStars"
 
+import "../assets/scss/styling/ReviewShowPage.scss"
+
 const ReviewShowPage = props => {
   library.add(fas)
 
   const [updatedReview, setUpdatedReview] = useState({
     reviewerName: "",
     airline: {
-        id: ""
+      id: ""
     }
   })
   const fetchReview = async () => {
@@ -26,7 +28,6 @@ const ReviewShowPage = props => {
         throw error
       }
       const responseBody = await response.json()
-      console.log(responseBody.review)
       setUpdatedReview(responseBody.review)
     } catch (err) {
       console.error(`Error in fetch: ${err.message}`)
@@ -38,33 +39,33 @@ const ReviewShowPage = props => {
   }, [])
 
   return (
-    <div className="cards cell small-12 large-10">
-      <div className="card">
-        <div className="card-top">
-          <div className="name">
-            <div className="reviewer-image one" alt="">
-              {/* {updatedReview.reviewerName[0].toUpperCase()} */}
+      <div className="cards cell small-12 large-10">
+        <div className="card">
+          <div className="card-top">
+            <div className="name">
+              <div className="reviewer-image one" alt="">
+                {updatedReview.reviewerName.charAt(0).toUpperCase()}
+              </div>
+              <p>{updatedReview.reviewerName}</p>
             </div>
-            <p>{updatedReview.reviewerName}</p>
+
+            <div>
+              <NumberOfStars numberOfStars={updatedReview.numberOfStars} />
+            </div>
           </div>
 
-          <div>
-            <NumberOfStars numberOfStars={updatedReview.numberOfStars} />
+          <div className="comment-card">
+            <p id="comment"> {updatedReview.comment}</p>
           </div>
-        </div>
-
-        <div className="comment-card">
-          <p id="comment"> {updatedReview.comment}</p>
-        </div>
-        <div className="card-action">
-          <Link to={`/airlines/${updatedReview.airline.id}`}>Back</Link>
-          <button className="btn">
-            <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
-            Share
-          </button>
+          <div className="card-action">
+            <Link to={`/airlines/${updatedReview.airline.id}`}>Back</Link>
+            <button className="btn">
+              <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
+              Share
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 

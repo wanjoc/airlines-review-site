@@ -11,7 +11,7 @@ const ReviewList = props => {
 
   return (
     <div>
-      <div className="reviews-container grid-x">
+      <div className="reviews-container grid-container grid-x">
         <h2 className="title">Reviews</h2>
         <label htmlFor="search" className="input-field">
           <input id="search" placeholder="Search for reviews ..." type="text" />
