@@ -8,7 +8,6 @@ const NavBar = () => {
 
   let className = "navigation-menu-expanded"
   const handleClick = () => {
-    debugger
     setShowResponsiveNavBar(!showResponsiveNavBar)
   }
 

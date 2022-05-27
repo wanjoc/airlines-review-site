@@ -18,7 +18,6 @@ const ReviewTile = ({airlineId,
   library.add(fas)
   
   const [shouldRedirect, setShouldRedirect] = useState(false)
-  debugger
 
   const deleteReview = async () => {
     try {
