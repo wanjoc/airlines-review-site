@@ -86,7 +86,7 @@ const AirlineShow = props => {
         </div>
       )}
 
-      <ReviewList reviews={airline.reviews}/>
+      <ReviewList airlineId={airlineId} reviews={airline.reviews}/>
     </div>
   )
 }

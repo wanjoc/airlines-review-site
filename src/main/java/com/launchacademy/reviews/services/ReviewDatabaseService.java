@@ -48,7 +48,11 @@ public class ReviewDatabaseService implements ReviewService {
 
   @Override
   public void deleteReview(Review review) {
-    reviewsRepository.delete(review);
+    try{
+      reviewsRepository.delete(review);
+    } catch(Exception error){
+      throw new ReviewNotFoundException();
+    }
   }
 
   @Override

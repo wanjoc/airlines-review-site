@@ -13,7 +13,7 @@ const Footer = () => {
   library.add(fas, far, fab)
 
   return (
-    <footer className="social-links">
+    <footer id="social-links">
       <div className="row">
         <div className="col">
           <img
@@ -30,7 +30,7 @@ const Footer = () => {
           <p>Wonderland Road</p>
           <p>Chicago, Illinois 60661</p>
           <p className="email-id">flycopro@fly.com</p>
-          <h4>123-456-7890</h4>
+          <p>123-456-7890</p>
         </div>
         <div className="col">
           <h3 id="links">Links <div className="underline"><span></span></div></h3>
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr id="line" />
       <p className="copyright">FlyCo Pro © 2022 - All Rights Reserved</p>
     </footer>
   )

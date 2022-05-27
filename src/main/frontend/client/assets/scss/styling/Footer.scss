@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-footer {
+#social-links{
     width: 100%;
     background: #3eaeee;
     position:-webkit-sticky;
@@ -22,7 +22,7 @@ footer {
 }
 
 #headquarters, #newsletter, #links{
-    font-size: 1.3rem;
+    font-size: 1.0rem;
 }
 
 .row{
@@ -85,7 +85,7 @@ form .far{
 }
 
 form .email-form{
-    width: 100%;
+    width: 100px;
     background: transparent;
     color: #ccc;
     border: 0;
@@ -122,7 +122,7 @@ form button .fas{
     cursor: pointer;
 }
 
-hr {
+#line {
     width: 90%;
     border: 0;
     border-bottom: 1px solid #ccc;
