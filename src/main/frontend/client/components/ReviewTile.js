@@ -11,13 +11,14 @@ import EditReviewButton from "./EditReviewButton"
 
 import "../assets/scss/styling/ReviewTile.scss"
 
-const ReviewTile = ({
-  airlineId,
+const ReviewTile = ({airlineId,
   review: { reviewerName, numberOfStars, comment, id }
 }) => {
-  library.add(fas)
 
+  library.add(fas)
+  
   const [shouldRedirect, setShouldRedirect] = useState(false)
+  debugger
 
   const deleteReview = async () => {
     try {
