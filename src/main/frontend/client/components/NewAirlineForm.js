@@ -48,15 +48,6 @@ const NewAirlineForm = () => {
     }
   }
 
-  const validatePhoneNumber = phoneNumber => {
-    let isValid = false
-    let pattern = new RegExp(/^[0-9\b]+$/)
-    if (pattern.test(phoneNumber)) {
-      isValid = true
-    }
-    return isValid
-  }
-
   const validForSubmission = () => {
     let submitErrors = {}
     const requiredFields = Object.keys(formPayload)
@@ -79,18 +70,19 @@ const NewAirlineForm = () => {
           }
         }
       }
-      if (field === "contactNumber" && formPayload[field].trim() !== ""){
-        if (!validatePhoneNumber(formPayload[field])){
+      if (field === "contactNumber" && formPayload[field].trim() !== "") {
+        let phoneRegex = new RegExp(
+          /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+        )
+        if (phoneRegex.test(formPayload[field])) {
+          formPayload[field] = formPayload[field].replace(
+            phoneRegex,
+            "($1) $2-$3"
+          )
+        } else {
           submitErrors = {
             ...submitErrors,
-            [field]:
-              "is not a valid phone number.Invalid characters detected"
-          }
-        } else if (formPayload[field].length !== 10){
-          submitErrors = {
-            ...submitErrors,
-            [field]:
-              "is not a valid phone number."
+            [field]: "is not a valid phone number."
           }
         }
       }
@@ -119,7 +111,10 @@ const NewAirlineForm = () => {
 
   return (
     <>
-      <form className="airline-form cell small-12 large-10" onSubmit={handleSubmit}>
+      <form
+        className="airline-form cell small-12 large-10"
+        onSubmit={handleSubmit}
+      >
         <h1 className="new-airline-title">Add A New Airline</h1>
         <ErrorList errors={errors} />
         <div>
@@ -168,6 +163,7 @@ const NewAirlineForm = () => {
             name="contactNumber"
             id="contactNumber"
             type="text"
+            placeholder="5556660000"
             value={formPayload.contactNumber}
             onChange={handleInputChange}
           />
