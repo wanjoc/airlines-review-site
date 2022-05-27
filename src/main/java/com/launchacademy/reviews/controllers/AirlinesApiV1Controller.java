@@ -50,7 +50,7 @@ public class AirlinesApiV1Controller {
       dataMap.put("airline", airlineService.findById(id));
       return ResponseEntity.ok(dataMap);
     } catch (Exception e) {
-      throw new AirlineNotFoundException();
+      return new ResponseEntity("errors", HttpStatus.NOT_FOUND);
     }
   }
 
@@ -87,7 +87,6 @@ public class AirlinesApiV1Controller {
   @DeleteMapping("/{id}")
   public ResponseEntity<Map<String, Review>> deleteAirline(@PathVariable Long id) {
     Airline airline = airlineService.findById(id);
-    System.out.println(airline.getName());
     Map<String, Review> dataMap = new HashMap<>();
     airlineService.deleteAirline(airline);
     return new ResponseEntity<>(dataMap, HttpStatus.ACCEPTED);

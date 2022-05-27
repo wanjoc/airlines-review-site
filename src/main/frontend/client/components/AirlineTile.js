@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom"
 
 import AverageRating from "./AverageRating"
 import DeleteAirlineButton from "./DeleteAirlineButton"
-import "./scss/AirlineTile.scss"
+import "../assets/scss/styling/AirlineTile.scss"
 
 const AirlineTile = ({ airline: { id, name, logoUrl, contactNumber } }) => {
 

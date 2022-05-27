@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 
 import ErrorList from "./ErrorList"
 
@@ -28,9 +28,8 @@ const EditReview = props => {
         throw error
       }
       const responseBody = await response.json()
-      const targetedReview = responseBody.review;
+      const targetedReview = responseBody.review
       targetedReview.airlineId = targetedReview.airline.id
-      console.log(targetedReview)
       setReview(targetedReview)
     } catch (err) {
       console.error(`Error in fetch: ${err.message}`)
@@ -44,7 +43,7 @@ const EditReview = props => {
   const handleChange = e => {
     setReview({
       ...review,
-      [e.currentTarget.name]: e.currentTarget.value,
+      [e.currentTarget.name]: e.currentTarget.value
     })
   }
   const isValid = () => {
@@ -161,6 +160,9 @@ const EditReview = props => {
                 <button type="submit" onClick={updateNumOfStars}>
                   Update my Review
                 </button>
+                <Link to={`/airlines/${review.airlineId}`}>
+                  <button>Back</button>
+                </Link>
               </div>
             </form>
           </div>

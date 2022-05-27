@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./scss/DeleteReviewButton.scss"
+import "../assets/scss/styling/DeleteReviewButton.scss"
 
 const DeleteReviewButton = props => {
   const handleDelete = e => {

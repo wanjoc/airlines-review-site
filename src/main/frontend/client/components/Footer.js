@@ -7,7 +7,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 
-import "./scss/Footer.scss"
+import "../assets/scss/styling/Footer.scss"
 
 const Footer = () => {
   library.add(fas, far, fab)

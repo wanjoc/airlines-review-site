@@ -3,7 +3,7 @@ import _ from "lodash"
 
 import ErrorList from "./ErrorList"
 
-import "./scss/ReviewForm.scss"
+import "../assets/scss/styling/ReviewForm.scss"
 
 const ReviewForm = props => {
   const [rating, setRating] = useState(0)

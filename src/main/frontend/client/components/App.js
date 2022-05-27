@@ -15,6 +15,7 @@ import Footer from "./Footer"
 import AboutUs from "./AboutUs"
 import EditReview from "./EditReview"
 import ReviewShowPage from "./ReviewShowPage"
+import Page404 from "./Page404"
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route exact path="/airlines/:id" component={AirlineShow} />
           <Route exact path="/airlines/edit/:id" component={EditReview} />
           <Route exact path="/airlines/reviews/:id" component={ReviewShowPage} />
+          <Route exact path="/404" component={Page404} />
         </Switch>
         <Footer />
       </BrowserRouter>

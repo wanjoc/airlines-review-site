@@ -2,7 +2,7 @@ import React from "react"
 
 import ReviewTile from "./ReviewTile"
 
-import "./scss/ReviewList.scss"
+import "../assets/scss/styling/ReviewList.scss"
 
 const ReviewList = props => {
   const reviewTiles = props.reviews?.map(review => {

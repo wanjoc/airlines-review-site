@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
-import "./scss/NavBar.scss"
+import "../assets/scss/styling/NavBar.scss"
 
 const NavBar = () => {
   const [showResponsiveNavBar, setShowResponsiveNavBar] = useState(false)

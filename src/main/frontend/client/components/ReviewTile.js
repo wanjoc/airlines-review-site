@@ -7,13 +7,12 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 
 import NumberOfStars from "./NumberOfStars"
 import DeleteReviewButton from "./DeleteReviewButton"
-// import "./reviewIndex.scss"
-// import "./scss/reviewIndex.scss"
-
-import "./scss/ReviewTile.scss"
 import EditReviewButton from "./EditReviewButton"
 
-const ReviewTile = ({airlineId,
+import "../assets/scss/styling/ReviewTile.scss"
+
+const ReviewTile = ({
+  airlineId,
   review: { reviewerName, numberOfStars, comment, id }
 }) => {
   library.add(fas)
@@ -62,8 +61,10 @@ const ReviewTile = ({airlineId,
           <p id="comment"> {comment}</p>
         </div>
         <div className="card-action">
-          <DeleteReviewButton deleteReview={deleteReview} />
-          <EditReviewButton id={id} />
+          <div className="delete-edit-btns">
+            <DeleteReviewButton deleteReview={deleteReview} />
+            <EditReviewButton id={id} />
+          </div>
           <button className="btn">
             <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
             Share

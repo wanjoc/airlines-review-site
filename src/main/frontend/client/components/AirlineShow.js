@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react"
-import { useLocation } from "react-router-dom"
+import { Redirect, useLocation } from "react-router-dom"
 
 import ReviewList from "./ReviewList"
 import ReviewForm from "./ReviewForm"
 
-import "./scss/AirlineShow.scss"
+import "../assets/scss/styling/AirlineShow.scss"
 
 const AirlineShow = props => {
   let location = useLocation()
   const [airline, setAirline] = useState({ reviews: [] })
   const [showReviewForm, setShowReviewForm] = useState(false)
+  const [redirect, setRedirect] = useState(false)
 
   const airlineId = props.match.params.id
 
@@ -17,6 +18,9 @@ const AirlineShow = props => {
     try {
       const response = await fetch(`/api/v1/airlines/${airlineId}`)
       if (!response.ok) {
+        if (response.status === 404){
+          setRedirect(true)
+        }
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
         throw error
@@ -32,12 +36,16 @@ const AirlineShow = props => {
     fetchAirline()
   }, [location.pathname])
 
-  const handleClick = e => {
+  const handleClick = () => {
     setShowReviewForm(!showReviewForm)
   }
 
-  const keepReviewFormOpen = output => {
+  const keepReviewFormOpen = () => {
     window.location.reload()
+  }
+
+  if (redirect){
+    return <Redirect to="/404" />
   }
 
   return (

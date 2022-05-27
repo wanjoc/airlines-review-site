@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -6,14 +7,17 @@ import { fas } from "@fortawesome/free-solid-svg-icons"
 
 import NumberOfStars from "./NumberOfStars"
 
-const ReviewShowPage = (props) => {
+const ReviewShowPage = props => {
   library.add(fas)
 
-  const [updatedReview, setUpdatedReview] = useState({})
-
+  const [updatedReview, setUpdatedReview] = useState({
+    reviewerName: "",
+    airline: {
+        id: ""
+    }
+  })
   const fetchReview = async () => {
     const reviewId = props.match.params.id
-
     try {
       const response = await fetch(`/api/v1/reviews/${reviewId}`)
       if (!response.ok) {
@@ -32,8 +36,6 @@ const ReviewShowPage = (props) => {
   useEffect(() => {
     fetchReview()
   }, [])
-
-  console.log(updatedReview)
 
   return (
     <div className="cards cell small-12 large-10">
@@ -55,6 +57,7 @@ const ReviewShowPage = (props) => {
           <p id="comment"> {updatedReview.comment}</p>
         </div>
         <div className="card-action">
+          <Link to={`/airlines/${updatedReview.airline.id}`}>Back</Link>
           <button className="btn">
             <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />
             Share

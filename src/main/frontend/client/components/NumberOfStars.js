@@ -2,8 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons"
 
-import "../assets/scss/main.scss"
-import "./scss/NumberOfStars.scss"
+import "../assets/scss/styling/NumberOfStars.scss"
 
 const NumberOfStars = ({ numberOfStars }) => {
   

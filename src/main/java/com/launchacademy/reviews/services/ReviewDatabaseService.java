@@ -65,14 +65,12 @@ public class ReviewDatabaseService implements ReviewService {
   public Review updateReview(Long id, ReviewForm reviewForm) {
       Optional<Review> review = reviewsRepository.findById(id);
       if (review.isPresent()) {
-        System.out.println(review.get().getReviewerName());
         Review dbReview = review.get();
         dbReview.setReviewerName(reviewForm.getReviewerName());
         dbReview.setNumberOfStars(reviewForm.getNumberOfStars());
         dbReview.setComment(reviewForm.getComment());
         return reviewsRepository.save(dbReview);
       }else{
-        System.out.println("Database update");
         throw new ReviewNotFoundException();
       }
   }

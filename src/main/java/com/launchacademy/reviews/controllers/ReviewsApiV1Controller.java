@@ -3,15 +3,12 @@ package com.launchacademy.reviews.controllers;
 import com.launchacademy.reviews.exceptionHandling.ReviewNotCreatedException;
 import com.launchacademy.reviews.exceptionHandling.ReviewNotDeletedException;
 import com.launchacademy.reviews.exceptionHandling.ReviewNotFoundException;
-import com.launchacademy.reviews.models.Airline;
 import com.launchacademy.reviews.models.Review;
 import com.launchacademy.reviews.models.ReviewForm;
 import com.launchacademy.reviews.services.ReviewService;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import javax.swing.text.html.Option;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -96,7 +93,6 @@ public class ReviewsApiV1Controller {
   @PutMapping("/{id}")
   public ResponseEntity<Map<String, Review>> editReview(@PathVariable Long id,@RequestBody @Valid ReviewForm reviewForm,
       BindingResult bindingResult) {
-    System.out.println(id);
     try {
       if (bindingResult.hasFieldErrors()) {
         Map<String, String> errorsList = new HashMap<>();
@@ -107,7 +103,6 @@ public class ReviewsApiV1Controller {
         errors.put("errors", errorsList);
         return new ResponseEntity(errors, HttpStatus.UNPROCESSABLE_ENTITY);
       } else {
-        System.out.println("Controller update");
         Map<String, Review> dataMap = new HashMap<>();
         Review updatedReview = reviewService.updateReview(id, reviewForm);
         dataMap.put("review", updatedReview);

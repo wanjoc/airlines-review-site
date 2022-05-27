@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import PopUp from "./PopUp"
 
-import "./scss/DeleteReviewButton.scss"
+import "../assets/scss/styling/DeleteReviewButton.scss"
 
 const DeleteAirlineButton = props => {
   const [isOpen, setIsOpen] = useState(false)

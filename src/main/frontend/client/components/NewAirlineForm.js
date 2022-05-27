@@ -5,7 +5,7 @@ import validator from "validator"
 
 import ErrorList from "./ErrorList"
 
-import "./scss/NewAirlineForm.scss"
+import "../assets/scss/styling/NewAirlineForm.scss"
 
 const NewAirlineForm = () => {
   const [formPayload, setFormPayload] = useState({
